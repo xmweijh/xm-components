@@ -20,10 +20,10 @@ hero:
       link: /components/button
     - theme: alt
       text: Starred
-      link: https://github.com/jsxiaosi/xm-components-lib/
+      link: https://github.com/xmweijh/xm-components
     - theme: alt
       text: Forked
-      link: https://github.com/jsxiaosi/xm-components-lib/fork
+      link: https://github.com/xmweijh/xm-components/fork
    
 
 features:

@@ -60,7 +60,7 @@ const config: UserConfig = {
   ],
   themeConfig: {
     editLink: {
-      pattern: 'https://github.com/jsxiaosi/xm-components-lib/tree/main/docs/:path',
+      pattern: 'https://github.com/xmweijh/xm-components/tree/main/docs/:path',
       text: '编辑此页面',
     },
     logo: '/logo2.png',
@@ -73,7 +73,7 @@ const config: UserConfig = {
         faeFilters: ['tags:guide,api'],
       },
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/jsxiaosi/xm-components-lib' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/xmweijh/xm-components' }],
     // 顶部标题栏
     nav,
     // 侧边栏
