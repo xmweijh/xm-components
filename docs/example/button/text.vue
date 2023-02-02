@@ -10,14 +10,14 @@
 </script>
 
 <template>
-  <p>Basic text button</p>
+  <p>基础文本按钮</p>
   <div class="flex justify-space-between mb-4 flex-wrap gap-4">
     <i-button v-for="button in buttons" :key="button.text" :type="button.type" text>{{
       button.text
     }}</i-button>
   </div>
 
-  <p>Background color always on</p>
+  <p>有背景颜色的文本按钮</p>
   <div class="flex justify-space-between mb-4 flex-wrap gap-4">
     <i-button v-for="button in buttons" :key="button.text" :type="button.type" text bg>{{
       button.text

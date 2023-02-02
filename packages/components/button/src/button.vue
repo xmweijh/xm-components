@@ -1,24 +1,48 @@
 <script lang="ts" setup>
-  import lodash from 'lodash';
+  import { computed } from 'vue';
+  import { createNamespace } from '../../../utils/components';
+  import { ButtonProps } from './button';
 
-  withDefaults(
-    defineProps<{
-      type?: 'primary' | 'success' | 'error';
-    }>(),
-    {
-      type: 'primary',
-    },
+  const props = defineProps(ButtonProps);
+  const style = computed(() =>
+    // 若传了颜色color属性则以其为准
+    props.color
+      ? {
+          '--I-button-bg-color': props.color,
+          '--I-button-text-color': 'var(--I-color-white)',
+          '--I-button-border-color': props.color,
+        }
+      : {},
   );
-  console.log(lodash.chunk(['a', 'b', 'c', 'd'], 2));
+  const { createBEM } = createNamespace('button');
+
   defineOptions({
     name: 'IButton',
   });
 </script>
 
 <template>
-  <button class="mu_Button" :class="type">
-    <slot></slot>
+  <button
+    :class="[
+      createBEM(),
+      type && createBEM(`--${type}`),
+      size && createBEM(`--${size}`),
+      plain && 'is-plain',
+      round && 'is-round',
+      circle && 'is-circle',
+      disabled && 'is-disabled',
+      text && 'is-text',
+      bg && 'is-bg',
+    ]"
+    :style="{ color: textColor, ...style }"
+    :disabled="disabled"
+  >
+    <div :class="[createBEM('content')]">
+      <slot />
+    </div>
   </button>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+  @import './button.scss';
+</style>
