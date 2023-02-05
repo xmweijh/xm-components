@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme';
 import type { Theme } from 'vitepress';
+import IconList from '../../example/icon/IconList.vue'
 
 import Demo from '../components/v-demo.vue';
 import '../styles/app.scss';
@@ -13,5 +14,6 @@ export default <Theme>{
     // register global components
     app.use(xsComponents);
     app.component('Demo', Demo);
+    app.component('IconList', IconList);
   },
 };

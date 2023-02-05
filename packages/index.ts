@@ -1,6 +1,5 @@
 // import installer from './installer';
 
-// export * from './components';
 // export * from './hooks';
 // export * from './utils';
 // export * from './installer';
@@ -10,6 +9,7 @@
 import type { App } from 'vue';
 
 import { IButton, IIcon } from './components';
+export * from './components';
 
 const components = { IButton, IIcon };
 /**
@@ -23,7 +23,7 @@ const install = function (app: App) {
   });
 };
 
-export { IButton, IIcon };
+// export { IButton, IIcon };
 
 export default {
   install,
