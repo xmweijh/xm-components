@@ -9,9 +9,9 @@
 
 import type { App } from 'vue';
 
-import { IButton, Iicon } from './components';
+import { IButton, IIcon } from './components';
 
-const components = { IButton, Iicon };
+const components = { IButton, IIcon };
 /**
  * 组件注册
  * @param {App} app Vue 对象
@@ -23,7 +23,7 @@ const install = function (app: App) {
   });
 };
 
-export { IButton, Iicon };
+export { IButton, IIcon };
 
 export default {
   install,

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
   import { computed } from 'vue';
-  import { createNamespace } from '../../../utils/components';
+  import { createNamespace } from '../../../utils';
   import { ButtonProps } from './button';
 
   const props = defineProps(ButtonProps);
