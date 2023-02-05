@@ -1,29 +1,45 @@
 # Icon 文档
 
-## Install
-
-Element Plus provides a set of common icons. 
+## 安装
 
 ```javascript
 import { createApp } from 'vue';
-import { Iicon } from 'vangle';
+import { IIcon } from 'vangle';
 
 const app = createApp();
-app.use(Iicon);
+app.use(IIcon);
 ```
 
-## Basic usage
+## 基础用法
 
-:::demo Use name prop to set icon name
+:::demo 
 
 icon/basic
 
 :::
 
-## Icon Color
+## 图标颜色
 
-:::demo Use color prop to set icon color
+:::demo 
 
 icon/color
 
 :::
+
+## 图标尺寸
+
+:::demo 
+
+icon/size
+
+:::
+
+## 图标列表
+
+<IconList />
+
+## 图表属性
+| 属性  | 说明     | 类型                     | 接收值 | Default            |
+| ----- | -------- | ------------------------ | ------ | ------------------ |
+| color | 图标颜色 | <CSSProperties, 'color'> | -      | inherit from color |
+| size  | 图表尺寸 | number                   | -      | inherit from size  |
