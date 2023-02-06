@@ -37,6 +37,14 @@ button/text
 
 :::
 
+## 图表按钮
+拥有图标的按钮
+:::demo 可以使用iconPosition="left|right"来确定图标的位置。同时可以通过circle来获得圆形按钮，值得注意的是圆形按钮就不会显示传入的文字。
+
+button/iconbutton
+
+:::
+
 ## 不同大小
 
 除了默认的大小，按钮组件还提供了3种额外的尺寸可供选择。
@@ -59,11 +67,15 @@ button/custom
 
 ## 按钮属性
 
-| 属性     | 说明           | 类型    | 接收值                                                  | Default |
-| -------- | -------------- | ------- | ------------------------------------------------------- | ------- |
-| size     | 按钮尺寸       | string  | large \| default  \| small \| mini                      | default |
-| type     | 按钮类型       | string  | primary \| success \| warning \| danger \| info \| text | —       |
-| plain    | 是否是朴素按钮 | boolean | —                                                       | false   |
-| round    | 是否是圆角按钮 | boolean | —                                                       | false   |
-| disabled | 是否禁用该按钮 | boolean | —                                                       | false   |
+| 属性         | 说明           | 类型    | 接收值                                                  | Default |
+| ------------ | -------------- | ------- | ------------------------------------------------------- | ------- |
+| size         | 按钮尺寸       | string  | large \| default  \| small \| mini                      | default |
+| type         | 按钮类型       | string  | primary \| success \| warning \| danger \| info \| text | —       |
+| plain        | 是否是朴素按钮 | boolean | —                                                       | false   |
+| round        | 是否是圆角按钮 | boolean | —                                                       | false   |
+| disabled     | 是否禁用该按钮 | boolean | —                                                       | false   |
+| iconPosition | 图标位置       | string  | left \| right                                           | left    |
+| circle       | 是否为圆形     | boolean | —                                                       | false   |
+
+
 

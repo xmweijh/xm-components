@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { computed } from 'vue';
   import { createNamespace } from '../../../utils';
+  import IIcon from '../../icon';
   import { ButtonProps } from './button';
 
   const props = defineProps(ButtonProps);
@@ -33,11 +34,13 @@
       disabled && 'is-disabled',
       text && 'is-text',
       bg && 'is-bg',
+      iconPosition && `icon-${iconPosition}`,
     ]"
     :style="{ color: textColor, ...style }"
     :disabled="disabled"
   >
-    <div :class="[createBEM('content')]">
+    <IIcon v-if="!!icon" :name="icon" class="icon" />
+    <div v-if="!circle" :class="[createBEM('content')]">
       <slot />
     </div>
   </button>
