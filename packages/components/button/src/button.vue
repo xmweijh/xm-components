@@ -5,16 +5,28 @@
   import { ButtonProps } from './button';
 
   const props = defineProps(ButtonProps);
-  const style = computed(() =>
+  const style = computed(() => {
     // 若传了颜色color属性则以其为准
-    props.color
-      ? {
-          '--I-button-bg-color': props.color,
-          '--I-button-text-color': 'var(--I-color-white)',
+    if (props.color) {
+      if (props.plain)
+        return {
+          '--I-button-bg-color': 'var(--I-color-white)',
+          '--I-button-text-color': props.color,
           '--I-button-border-color': props.color,
-        }
-      : {},
-  );
+        };
+      if (props.text)
+        return {
+          '--I-button-text-color': props.color,
+        };
+      return {
+        '--I-button-bg-color': props.color,
+        '--I-button-text-color': 'var(--I-color-white)',
+        '--I-button-border-color': props.color,
+      };
+    }
+    return {};
+  });
+
   const { createBEM } = createNamespace('button');
 
   defineOptions({

@@ -76,6 +76,7 @@ button/custom
 | disabled     | 是否禁用该按钮 | boolean | —                                                       | false   |
 | iconPosition | 图标位置       | string  | left \| right                                           | left    |
 | circle       | 是否为圆形     | boolean | —                                                       | false   |
+| textColor    | 改变字体颜色   | string  | <CSSProperties, 'color'>                                | —       |
 
 
 
