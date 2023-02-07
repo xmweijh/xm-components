@@ -6,7 +6,6 @@
   const props = defineProps(IconProps);
   const { createBEM } = createNamespace('icon');
   const icon = computed(() => getIcon(props.name));
-
   // 根据传入颜色和大小 更改样式
   const style = computed<CSSProperties>(() => {
     if (!props.size && !props.color) return {};
