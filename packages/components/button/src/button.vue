@@ -46,12 +46,14 @@
       disabled && 'is-disabled',
       text && 'is-text',
       bg && 'is-bg',
+      circle && 'is-circle',
       iconPosition && `icon-${iconPosition}`,
     ]"
     :style="{ color: textColor, ...style }"
     :disabled="disabled"
   >
-    <IIcon v-if="!!icon" :name="icon" class="icon" />
+    <IIcon v-if="icon && !loading" :name="icon" class="icon" />
+    <IIcon v-if="loading" name="loading" class="icon is-loading" />
     <div v-if="!circle" :class="[createBEM('content')]">
       <slot />
     </div>

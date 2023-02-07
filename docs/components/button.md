@@ -37,7 +37,9 @@ button/text
 
 :::
 
-## 图表按钮
+
+## 图标按钮
+
 拥有图标的按钮
 :::demo 可以使用iconPosition="left|right"来确定图标的位置。同时可以通过circle来获得圆形按钮，值得注意的是圆形按钮就不会显示传入的文字。
 
@@ -65,8 +67,25 @@ button/custom
 
 :::
 
-## 按钮属性
+## 加载中按钮
+点击按钮来加载数据，并向用户反馈加载状态。
 
+通过设置 loading 属性为 true 来显示加载中状态。
+:::demo
+
+button/loading
+
+:::
+
+## 按钮组
+以按钮组的方式出现，常用于多项类似操作。
+:::demo
+
+button/buttongroup
+
+:::
+
+## 按钮属性
 | 属性         | 说明           | 类型    | 接收值                                                  | Default |
 | ------------ | -------------- | ------- | ------------------------------------------------------- | ------- |
 | size         | 按钮尺寸       | string  | large \| default  \| small \| mini                      | default |
@@ -77,6 +96,6 @@ button/custom
 | iconPosition | 图标位置       | string  | left \| right                                           | left    |
 | circle       | 是否为圆形     | boolean | —                                                       | false   |
 | textColor    | 改变字体颜色   | string  | <CSSProperties, 'color'>                                | —       |
-
+| loading      | 加载中按钮     | boolean | —                                                       | false   |
 
 

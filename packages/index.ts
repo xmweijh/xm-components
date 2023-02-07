@@ -8,10 +8,10 @@
 
 import type { App } from 'vue';
 
-import { IButton, IIcon } from './components';
+import { IButton, IButtonGroup, IIcon } from './components';
 export * from './components';
 
-const components = { IButton, IIcon };
+const components = { IButton, IButtonGroup, IIcon };
 /**
  * 组件注册
  * @param {App} app Vue 对象

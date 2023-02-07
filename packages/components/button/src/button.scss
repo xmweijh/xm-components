@@ -115,6 +115,29 @@
     }
   }
 
+  & .icon.isloading {
+    animation: icon-loading 1.5s linear infinite;
+    -webkit-animation: icon-loading 1.5s linear infinite;
+  }
+
+  @keyframes icon-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   &.is-disabled {
     cursor: not-allowed;
     opacity: var(--I-button-disabled-opacity);
@@ -132,6 +155,12 @@
     &.is-bg {
       &::before {
         opacity: 0.1;
+      }
+      &:hover,
+      &:active {
+        &::before {
+          opacity: 0.3;
+        }
       }
     }
   }

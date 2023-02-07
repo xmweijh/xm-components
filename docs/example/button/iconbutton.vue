@@ -4,8 +4,8 @@
     <i-button type="primary" icon="edit">编辑</i-button>
     <i-button type="success" icon="check">检查</i-button>
     <i-button type="info" icon="message">消息</i-button>
-    <i-button type="warning" icon="star">收藏</i-button>
-    <i-button type="danger" icon="delete">删除</i-button>
+    <i-button type="warning" icon="star" icon-position="right">收藏</i-button>
+    <i-button type="danger" icon="delete" icon-position="right">删除</i-button>
   </div>
   <p>圆形图标按钮</p>
   <div>

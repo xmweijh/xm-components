@@ -44,19 +44,19 @@ const config: UserConfig = {
         color: '#FFFFFF',
       },
     ],
-    [
-      'link',
-      {
-        rel: 'manifest',
-        href: '/manifest.webmanifest',
-      },
-    ],
-    [
-      'script',
-      {
-        src: '/registerSW.js',
-      },
-    ],
+    // [
+    //   'link',
+    //   {
+    //     rel: 'manifest',
+    //     href: '/manifest.webmanifest',
+    //   },
+    // ],
+    // [
+    //   'script',
+    //   {
+    //     src: '/registerSW.js',
+    //   },
+    // ],
   ],
   themeConfig: {
     editLink: {
