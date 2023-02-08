@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import xmCom from '@packages/index';
-// import '@packages/theme-chalk/index.css';
+import '@packages/theme-default/index.scss';
 
 import App from './App.vue';
 

@@ -1,0 +1,82 @@
+.maskClass {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  height: 100%;
+  background-color: var(--I-overlay-color-lighter);
+  overflow: auto;
+}
+
+.I-dialog {
+  --I-dialog-width: 50%;
+  --I-dialog-margin-top: 15vh;
+  --I-dialog-bg-color: var(--I-bg-color);
+  --I-dialog-box-shadow: var(--I-box-shadow);
+  --I-dialog-title-font-size: var(--I-font-size-large);
+  --I-dialog-content-font-size: 14px;
+  --I-dialog-font-line-height: var(--I-font-line-height-primary);
+  --I-dialog-padding-primary: 20px;
+  --I-dialog-border-radius: var(--I-radius-small);
+  position: relative;
+  margin: var(--I-dialog-margin-top, 15vh) auto 50px;
+  background: var(--I-dialog-bg-color);
+  border-radius: var(--I-dialog-border-radius);
+  box-shadow: var(--I-dialog-box-shadow);
+  box-sizing: border-box;
+  width: var(--I-dialog-width, 50%);
+
+  &__header {
+    padding: var(--I-dialog-padding-primary);
+    padding-bottom: 10px;
+    margin-right: 16px;
+    word-break: break-all;
+  }
+
+  &__title {
+    line-height: var(--I-dialog-font-line-height);
+    font-size: var(--I-dialog-title-font-size);
+    color: var(--I-text-color-primary);
+  }
+
+  &__headerbtn {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    padding: 0;
+    width: 54px;
+    height: 54px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: var(--I-message-close-size, 16px);
+  }
+
+  &__body {
+    padding: calc(var(--I-dialog-padding-primary) + 10px) var(--I-dialog-padding-primary);
+    color: var(--I-text-color-regular);
+    font-size: var(--I-dialog-content-font-size);
+    word-break: break-all;
+  }
+
+  &__footer {
+    padding: var(--I-dialog-padding-primary);
+    padding-top: 10px;
+    text-align: right;
+    box-sizing: border-box;
+  }
+}
+
+//   <Transition>配套动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
