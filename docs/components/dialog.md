@@ -17,3 +17,30 @@ Dialog 组件基本使用示例。
 dialog/basic
 
 :::
+
+## 自定义头部
+header 插槽可用于自定义显示标题的区域。 
+
+:::demo
+
+dialog/custom
+
+:::
+
+## 嵌套的对话框
+在一个 Dialog 内部嵌套另一个 Dialog。
+
+:::demo
+
+dialog/nested
+
+:::
+
+## 居中布局
+设置 center 属性即可。center仅影响标题和底部区域。如果需要内容也水平居中，请自行为其添加 CSS 样式。
+:::demo
+
+dialog/center
+
+:::
+

@@ -1,23 +1,34 @@
 <template>
-  <I-button @click="visible = true"> Open Dialog with customized header </I-button>
-  <I-dialog v-model="visible" :show-close="false">
-    <template #header>
+  <I-button @click="visible = true"> 打开自定义头部对话框 </I-button>
+  <I-dialog v-model="visible" :show-close="false" :before-close="handleClose">
+    <template #header="{ close }">
       <div class="my-header">
-        <h4>This is a custom header!</h4>
-        <I-button type="danger" @click="visible = false">
+        <h4>自定义头部</h4>
+        <I-button type="danger" @click="close">
           <I-icon class="I-icon--left" name="circle-close-filled"></I-icon>
-          Close
+          关闭
         </I-button>
       </div>
     </template>
-    This is dialog content.
+    内容部分
+    <template #footer>
+      <span class="dialog-footer">
+        <I-button @click="visible = false">取消</I-button>
+        <I-button type="primary" @click="visible = false"> 确认 </I-button>
+      </span>
+    </template>
   </I-dialog>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   import { ref } from 'vue';
 
   const visible = ref(false);
+  const handleClose = (done: () => void) => {
+    // dialogVisible.value = false
+    console.log('即将关闭');
+    done();
+  };
 </script>
 
 <style scoped>

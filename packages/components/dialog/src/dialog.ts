@@ -36,4 +36,7 @@ export const DialogProps = {
   width: {
     type: [String, Number],
   },
+  center: {
+    type: Boolean,
+  },
 };
