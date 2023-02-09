@@ -19,7 +19,8 @@
   --I-dialog-content-font-size: 14px;
   --I-dialog-font-line-height: var(--I-font-line-height-primary);
   --I-dialog-padding-primary: 20px;
-  --I-dialog-border-radius: var(--I-radius-small);
+  --I-dialog-border: var(--I-border);
+  --I-dialog-border-radius: var(--I-radius-middle);
   position: relative;
   margin: var(--I-dialog-margin-top, 15vh) auto 50px;
   background: var(--I-dialog-bg-color);
@@ -31,8 +32,8 @@
   &__header {
     padding: var(--I-dialog-padding-primary);
     padding-bottom: 10px;
-    margin-right: 16px;
     word-break: break-all;
+    border-bottom: var(--I-dialog-border);
   }
 
   &__title {
@@ -63,10 +64,10 @@
   }
 
   &__footer {
-    padding: var(--I-dialog-padding-primary);
-    padding-top: 10px;
+    padding: 10px var(--I-dialog-padding-primary);
     text-align: right;
     box-sizing: border-box;
+    border-top: var(--I-dialog-border);
   }
 }
 

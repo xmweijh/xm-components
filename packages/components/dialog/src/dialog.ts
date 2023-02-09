@@ -33,12 +33,7 @@ export const DialogProps = {
     type: Boolean,
     required: true,
   },
-  modalClass: String,
   width: {
     type: [String, Number],
-  },
-  trapFocus: {
-    type: Boolean,
-    default: false,
   },
 };

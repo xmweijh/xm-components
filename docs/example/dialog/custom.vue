@@ -14,7 +14,7 @@
   </I-dialog>
 </template>
 
-<script lang="ts" setup>
+<script setup>
   import { ref } from 'vue';
 
   const visible = ref(false);
