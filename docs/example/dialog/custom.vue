@@ -1,6 +1,6 @@
 <template>
   <I-button @click="visible = true"> 打开自定义头部对话框 </I-button>
-  <I-dialog v-model="visible" :show-close="false" :before-close="handleClose">
+  <I-dialog v-if="visible" v-model="visible" :show-close="false" :before-close="handleClose">
     <template #header="{ close }">
       <div class="my-header">
         <h4>自定义头部</h4>
@@ -26,8 +26,7 @@
   const visible = ref(false);
   const handleClose = (done: () => void) => {
     // dialogVisible.value = false
-    console.log('即将关闭');
-    done();
+    confirm('确认关闭？') && done();
   };
 </script>
 

@@ -74,6 +74,7 @@
   <Teleport to="body">
     <Transition name="fade">
       <!-- 全屏模态层 -->
+      <!-- 为防止用户在外部忘了写v-if也能实现基本功能 在此处添加v-if -->
       <div v-if="modelValue" class="maskClass" @click="onModalClick">
         <!-- 对话框整体 -->
         <!-- 单击事件将停止传递, 防止触发模态层单击事件 -->

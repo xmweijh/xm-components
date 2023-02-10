@@ -1,8 +1,8 @@
 <template>
   <I-button type="text" @click="outerVisible = true">打开对话框</I-button>
 
-  <I-dialog v-model="outerVisible" title="Outer Dialog">
-    <I-dialog v-model="innerVisible" width="30%" title="Inner Dialog" />
+  <I-dialog v-if="outerVisible" v-model="outerVisible" title="Outer Dialog">
+    <I-dialog v-if="innerVisible" v-model="innerVisible" width="30%" title="Inner Dialog" />
     内容部分
     <template #footer>
       <div class="dialog-footer">
