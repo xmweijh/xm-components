@@ -1,12 +1,18 @@
 <script lang="ts" setup>
-  import { onMounted, onBeforeUnmount, watch } from 'vue';
+  import { onMounted, onBeforeUnmount, watch, ref, computed } from 'vue';
   import { createNamespace } from '../../../utils';
   import IIcon from '../../icon';
   import { DialogProps } from './dialog';
+  import { useDraggable } from './useDraggable';
 
   const props = defineProps(DialogProps);
   const emit = defineEmits(['update:modelValue']);
   const { createBEM } = createNamespace('dialog');
+
+  const targetRef = ref<HTMLElement | undefined>();
+  const handleRef = ref<HTMLElement | undefined>();
+
+  const draggable = computed(() => props.draggable);
 
   // 通过modelValue从外部控制对话框显示情况
   // modelValue 和 onUpdate:modelValue是v-model的指令扩展
@@ -64,6 +70,9 @@
     }
   });
 
+  // 拖拽效果
+  props.draggable && useDraggable(targetRef, handleRef, draggable);
+
   defineOptions({
     name: ' IDialog',
   });
@@ -78,9 +87,13 @@
       <div v-if="modelValue" class="maskClass" @click="onModalClick">
         <!-- 对话框整体 -->
         <!-- 单击事件将停止传递, 防止触发模态层单击事件 -->
-        <div :class="[createBEM()]" :style="{ top, width }" @click.stop>
+        <div ref="targetRef" :class="[createBEM()]" :style="{ top, width }" @click.stop>
           <!-- 对话框头部 -->
-          <div :class="[createBEM('header')]" :style="{ 'text-align': center ? 'center' : '' }">
+          <div
+            ref="handleRef"
+            :class="[createBEM('header'), draggable && 'is-draggable']"
+            :style="{ 'text-align': center ? 'center' : '' }"
+          >
             <slot name="header" :close="doClose">
               <span :class="[createBEM('title')]">{{ title }}</span>
               <button v-if="showClose" :class="[createBEM('headerbtn')]" @click="doClose">

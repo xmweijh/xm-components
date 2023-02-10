@@ -7,6 +7,9 @@ export const DialogProps = {
     type: String,
     default: '',
   },
+  draggable: {
+    type: Boolean,
+  },
   beforeClose: {
     type: Function,
   },
