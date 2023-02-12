@@ -13,5 +13,5 @@
 </script>
 
 <template>
-  <m-checkbox v-model="checkboxVal" :options="checkOptions"></m-checkbox>
+  <I-checkbox v-model="checkboxVal" :options="checkOptions"></I-checkbox>
 </template>

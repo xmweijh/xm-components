@@ -18,6 +18,10 @@
         {
           "text": "Message",
           "link": "message"
+        },
+        {
+          "text": "Checkbox",
+          "link": "checkbox"
         }
       ]
     }
