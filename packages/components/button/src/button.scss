@@ -1,0 +1,190 @@
+@import '../../../theme-default/var.scss';
+
+.I-button {
+  --I-button-text-color: var(--I-text-color-regular);
+  --I-button-font-weight: 500;
+  --I-button-bg-color: var(--I-color-white);
+  --I-button-border-color: var(--I-border-color);
+  --I-button-font-size-middle: var(--I-font-size-middle);
+  --I-button-radius-middle: var(--I-radius-middle);
+  --I-button-disabled-opacity: var(--I-disabled-opacity);
+  --I-button-size: #{map-get($buttonSizes, middle)};
+  --I-button-size-mini: #{map-get($buttonSizes, mini)};
+  --I-button-size-large: #{map-get($buttonSizes, large)};
+  --I-button-size-small: #{map-get($buttonSizes, small)};
+  --I-button-padding: #{map-get($paddingSizes, base) map-get($paddingSizes, middle)};
+}
+
+@mixin button-var {
+  @each $key, $item in $colors {
+    &.I-button--#{$key} {
+      --I-button-bg-color: #{$item};
+      --I-button-text-color: #fff;
+      --I-button-border-color: #{$item};
+
+      &.is-plain {
+        --I-button-bg-color: var(--I-color-white);
+        --I-button-text-color: #{$item};
+        --I-button-border-color: #{$item};
+      }
+
+      &.is-text {
+        color: #{$item};
+      }
+    }
+  }
+}
+
+@mixin button-size {
+  @each $key, $item in $fontSizes {
+    &.I-button--#{$key} {
+      --I-button-size: var(--I-button-size-#{$key});
+      --I-button-padding: calc(var(--I-button-size) - 20px) calc(var(--I-button-size) - 12px);
+      height: var(--I-button-size);
+      line-height: var(--I-button-size);
+      font-size: var(--I-font-size-#{$key});
+      border-radius: var(--I-radius-#{$key});
+    }
+  }
+}
+
+.I-button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: var(--I-button-size);
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--I-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--I-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--I-button-bg-color);
+  border: var(--I-border);
+  border-color: var(--I-button-border-color);
+  font-size: var(--I-button-font-size-middle);
+  border-radius: var(--I-button-radius-middle);
+  padding: var(--I-button-padding);
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    border-radius: inherit;
+    /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    content: '';
+  }
+
+  &:hover,
+  &:active {
+    &::before {
+      opacity: 0.3;
+    }
+  }
+
+  @include button-var;
+  @include button-size;
+
+  &.is-round {
+    border-radius: var(--I-radius-round);
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+
+    & .icon {
+      margin: 0 !important;
+    }
+  }
+
+  & .icon.isloading {
+    animation: icon-loading 1.5s linear infinite;
+    -webkit-animation: icon-loading 1.5s linear infinite;
+  }
+
+  @keyframes icon-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: var(--I-button-disabled-opacity);
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &.is-text {
+    color: var(--I-button-text-color);
+    border: 0 solid transparent;
+    background-color: transparent;
+
+    &.is-bg {
+      &::before {
+        opacity: 0.1;
+      }
+      &:hover,
+      &:active {
+        &::before {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  &.icon-left {
+    > .icon {
+      order: 1;
+      margin-right: 0.4em;
+      margin-top: 0.1em;
+    }
+
+    > .I-button__content {
+      order: 2;
+    }
+  }
+
+  &.icon-right {
+    > .icon {
+      order: 2;
+      margin-top: 0.1em;
+      margin-left: 0.4em;
+    }
+
+    > .I-button__content {
+      order: 1;
+    }
+  }
+}

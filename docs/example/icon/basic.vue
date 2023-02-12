@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <Iicon name="zoom-in"></Iicon>
-  </div>
+  <i-icon name="zoom-in"></i-icon>
 </template>

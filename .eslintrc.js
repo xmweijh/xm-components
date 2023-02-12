@@ -7,6 +7,7 @@ module.exports = {
   },
   extends: ['@jsxiaosi/eslint-config-vue', 'plugin:prettier/recommended'],
   rules: {
+    'vue/no-v-text-v-html-on-component': 'off',
     'prettier/prettier': [
       'error',
       {

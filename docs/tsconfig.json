@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "types": ["unplugin-vue-define-options/vite", "vite/client"],
     "typeRoots": ["./node_modules", "../typings/vue-shim.d.ts"],
-    "lib": ["WebWorker"],
+    "lib": ["WebWorker", "DOM"],
     "paths": {
       "@xm-components/*": ["../packages/"],
       "@/*": ["./.vitepress/"]

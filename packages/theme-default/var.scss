@@ -1,0 +1,59 @@
+$types: primary, info, success, warning, danger, error, loading;
+
+// 类型颜色
+$colors: (
+  primary: #51a8dd,
+  info: #b1b479,
+  success: #e87a90,
+  warning: #f9bf45,
+  danger: #b5495b,
+  error: #876633,
+  loading: #b28fce,
+);
+
+// 文字颜色
+$fontColors: (
+  primary: '#303133',
+  regular: '#606266',
+  secondary: '#909399',
+  placeholder: '#a8abb2',
+  disabled: '#c0c4cc',
+);
+
+// 禁用颜色
+$disabledColors: (
+  bg: #f5f7fa,
+  text: #a8abb2,
+  border: #e4e7ed,
+);
+
+// 文字大小
+$fontSizes: (
+  mini: 10px,
+  small: 12px,
+  middle: 14px,
+  large: 16px,
+);
+
+$paddingSizes: (
+  base: 4px,
+  mini: 10px,
+  small: 12px,
+  middle: 16px,
+  large: 24px,
+);
+
+// 文字大小
+$iconSizes: (
+  mini: 16px,
+  small: 18px,
+  middle: 20px,
+  large: 22px,
+);
+
+$buttonSizes: (
+  mini: 18px,
+  small: 24px,
+  middle: 32px,
+  large: 40px,
+);

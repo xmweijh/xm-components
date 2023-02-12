@@ -1,6 +1,5 @@
 // import installer from './installer';
 
-// export * from './components';
 // export * from './hooks';
 // export * from './utils';
 // export * from './installer';
@@ -9,9 +8,10 @@
 
 import type { App } from 'vue';
 
-import { IButton, Iicon } from './components';
+import { IButton, IButtonGroup, IIcon, IDialog, IMessage } from './components';
+export * from './components';
 
-const components = { IButton, Iicon };
+const components = { IButton, IButtonGroup, IIcon, IDialog, IMessage };
 /**
  * 组件注册
  * @param {App} app Vue 对象
@@ -23,7 +23,7 @@ const install = function (app: App) {
   });
 };
 
-export { IButton, Iicon };
+// export { IButton, IIcon };
 
 export default {
   install,

@@ -1,0 +1,63 @@
+@import './var.scss';
+
+:root {
+    --I-color-white: #ffffff;
+    --I-color-black: #000000;
+    --I-bg-color: var(--I-color-white);
+    // Padding
+    --I-padding-base: 4px;
+    --I-padding-small: 12px;
+    --I-padding-middle: 16px;
+    --I-padding-large: 24px;
+    --I-line-height-small: 18px;
+    --I-line-height-middle: 20px;
+    --I-line-height-large: 22px;
+
+    // Border
+    --I-border-color: #ebedf0;
+    --I-border-width: 1px;
+    --I-border-style: solid;
+    --I-border: var(--I-border-width) solid var(--I-border-color);
+    --I-radius-base: 4px;
+    --I-radius-small: 2px;
+    --I-radius-middle: 4px;
+    --I-radius-large: 8px;
+    --I-radius-round: 20px;
+    --I-radius-max: 999px;
+
+    --I-active-opacity: 0.6;
+    --I-disabled-opacity: 0.5;
+    --I-overlay-color-lighter: rgba(0, 0, 0, .5);
+    --I-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, .04), 0px 8px 20px rgba(0, 0, 0, .08);
+    --I-font-line-height-primary: 24px;
+
+    // Font
+    @each $key,
+    $item in $fontSizes {
+        --I-font-size-#{$key}: #{$item};
+    }
+
+
+    @each $key,
+    $item in $fontColors {
+        --I-text-color-#{$key}: #{$item};
+    }
+
+
+    @each $key,
+    $item in $disabledColors {
+        --I-disabled-#{$key}: #{$item};
+    }
+
+
+    @each $key,
+    $item in $iconSizes {
+        --I-icon-size-#{$key}: #{$item};
+    }
+
+
+    @each $key,
+    $item in $colors {
+        --I-color-#{$key}: #{$item};
+    }
+}

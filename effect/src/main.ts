@@ -1,11 +1,11 @@
 import { createApp } from 'vue';
-import xsCom from '@packages/index';
-// import '@packages/theme-chalk/index.css';
+import xmCom from '@packages/index';
+import '@packages/theme-default/index.scss';
 
 import App from './App.vue';
 
 const app = createApp(App);
 
-app.use(xsCom);
+app.use(xmCom);
 
 app.mount('#app');
