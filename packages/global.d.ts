@@ -5,6 +5,7 @@ declare module '@vue/runtime-core' {
     Iicon: typeof import('xm-components')['IIcon'];
     IButtonGroup: typeof import('xm-components')['IButtonGroup'];
     IDialog: typeof import('xm-components')['IDialog'];
+    IMessage: typeof import('xm-components')['IMessage'];
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <I-button type="text" @click="dialogVisible = true">打开对话框</I-button>
+  <I-button text @click="dialogVisible = true">打开对话框</I-button>
 
   <I-dialog v-if="dialogVisible" v-model="dialogVisible" title="标题" width="30%" draggable>
     <span>这是一个可拖拽的对话框</span>

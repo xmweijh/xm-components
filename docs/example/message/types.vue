@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IMessage } from '@packages/index';
+  import { IMessage } from '@xm-components/index';
 
   const open = (type: string) => {
     IMessage[type]('This is a message');

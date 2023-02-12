@@ -1,5 +1,5 @@
 import type { App, Directive } from 'vue';
-import type { SFCWithInstall } from '../types';
+import type { SFCWithInstall, SFCInstallWithContext } from '../types';
 
 // 注册组件
 export const withInstall = <T>(main: T) => {
@@ -18,4 +18,12 @@ export const withInstallDirectives = <T extends Directive>(main: T, name: string
     },
     directive: main,
   };
+};
+
+export const withInstallFunction = <T>(fn: T, name: string) => {
+  (fn as SFCWithInstall<T>).install = (app: App) => {
+    app.config.globalProperties[name] = fn;
+  };
+
+  return fn as SFCInstallWithContext<T>;
 };

@@ -3,7 +3,7 @@
 ## 安装
 ```javascript
 import { createApp } from 'vue';
-import { IDialog } from 'vangle';
+import { IDialog } from 'xm-components';
 
 const app = createApp();
 app.use(IDialog);

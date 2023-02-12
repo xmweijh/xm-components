@@ -1,4 +1,4 @@
-$types: primary, info, success, warning, danger;
+$types: primary, info, success, warning, danger, error, loading;
 
 // 类型颜色
 $colors: (
@@ -7,6 +7,8 @@ $colors: (
   success: #e87a90,
   warning: #f9bf45,
   danger: #b5495b,
+  error: #876633,
+  loading: #b28fce,
 );
 
 // 文字颜色
