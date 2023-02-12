@@ -1,8 +1,15 @@
-<template>
-  <I-button type="text" @click="outerVisible = true">打开对话框</I-button>
+<script lang="ts" setup>
+  import { ref } from 'vue';
 
-  <I-dialog v-model="outerVisible" title="Outer Dialog">
-    <I-dialog v-model="innerVisible" width="30%" title="Inner Dialog" />
+  const outerVisible = ref(false);
+  const innerVisible = ref(false);
+</script>
+
+<template>
+  <I-button text @click="outerVisible = true">打开对话框</I-button>
+
+  <I-dialog v-if="outerVisible" v-model="outerVisible" title="Outer Dialog">
+    <I-dialog v-if="innerVisible" v-model="innerVisible" width="30%" title="Inner Dialog" />
     内容部分
     <template #footer>
       <div class="dialog-footer">
@@ -12,13 +19,6 @@
     </template>
   </I-dialog>
 </template>
-
-<script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const outerVisible = ref(false);
-  const innerVisible = ref(false);
-</script>
 
 <style scoped>
   .dialog-footer button:first-child {

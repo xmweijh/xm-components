@@ -12,8 +12,12 @@
           "link": "icon"
         },
         {
-          "text": "Dialpg",
+          "text": "Dialog",
           "link": "dialog"
+        },
+        {
+          "text": "Message",
+          "link": "message"
         }
       ]
     }

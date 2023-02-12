@@ -4,7 +4,7 @@
 
 ```javascript
 import { createApp } from 'vue';
-import { IIcon } from 'vangle';
+import { IIcon } from 'xm-components';
 
 const app = createApp();
 app.use(IIcon);

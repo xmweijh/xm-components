@@ -3,7 +3,7 @@
 ## 安装
 ```javascript
 import { createApp } from 'vue';
-import { IButton } from 'vangle';
+import { IButton } from 'xm-components';
 
 const app = createApp();
 app.use(IButton);

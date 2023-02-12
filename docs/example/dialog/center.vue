@@ -1,7 +1,19 @@
+<script lang="ts" setup>
+  import { ref } from 'vue';
+
+  const centerDialogVisible = ref(false);
+</script>
+
 <template>
   <I-button text @click="centerDialogVisible = true"> 打开对话框 </I-button>
 
-  <I-dialog v-model="centerDialogVisible" title="Warning" width="30%" center>
+  <I-dialog
+    v-if="centerDialogVisible"
+    v-model="centerDialogVisible"
+    title="Warning"
+    width="30%"
+    center
+  >
     <span> 默认情况下，内容不会居中对齐 </span>
     <template #footer>
       <span class="dialog-footer">
@@ -11,12 +23,6 @@
     </template>
   </I-dialog>
 </template>
-
-<script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const centerDialogVisible = ref(false);
-</script>
 
 <style scoped>
   .dialog-footer button:first-child {

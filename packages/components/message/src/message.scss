@@ -1,0 +1,48 @@
+@import '../../../theme-default/var.scss';
+
+#message {
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%);
+  z-index: 2000;
+  max-width: calc(100% - 32px);
+  width: fit-content;
+
+  .I-message {
+    --I-message-padding: var(--I-padding-middle);
+    --I-message-bg: #fff;
+    color: var(--I-message-color);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    background-color: var(--I-message-bg);
+    transition: opacity 0.3s, transform 0.3s, top 0.3s;
+    padding: var(--I-message-padding);
+    border-radius: var(--I-radius-base);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%),
+      0 9px 28px 8px rgb(0 0 0 / 5%);
+    pointer-events: all;
+
+    @each $item in $types {
+      &--#{$item} {
+        --I-message-color: var(--I-color-#{$item});
+      }
+    }
+
+    &--loading {
+      --I-message-color: #626aef;
+    }
+
+    &__content {
+      margin-left: 10px;
+    }
+  }
+
+  .message-fade-enter-from,
+  .message-fade-leave-to {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+}
