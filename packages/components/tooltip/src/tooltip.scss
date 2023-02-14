@@ -1,0 +1,86 @@
+$sides: (
+  top: bottom,
+  bottom: top,
+  left: right,
+  right: left,
+);
+
+.I-tooltip {
+  --I-arrow-size: 10px;
+  position: relative;
+  display: inline-block;
+
+  &__content {
+    --I-tooltip-content-bg: var(--I-color-white);
+    border-radius: var(--I-radius-middle);
+    color: var(--I-color-black);
+    background-color: var(--I-tooltip-content-bg);
+    padding: 4px 12px;
+    border: 1px solid var(--I-border-color);
+    position: absolute;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    font-size: 13px;
+    z-index: 1000;
+
+    &.is-dark {
+      --I-tooltip-content-bg: var(--I-color-black);
+      color: var(--I-color-white);
+      border: none;
+    }
+
+    @each $side, $value in $sides {
+      $positionKey: if($side ==top or $side ==bottom, left, top);
+
+      &[data-side^='#{$value}'] {
+        #{$side}: 0;
+        #{$positionKey}: 50%;
+      }
+
+      &[data-side^='#{$value}'] [class*='__arrow'] {
+        #{$side}: -5px;
+        #{$positionKey}: calc(50% - var(--I-arrow-size) / 2);
+      }
+
+      &.is-light[data-side^='#{$value}'] {
+        .I-tooltip__arrow::before {
+          border-#{$side}: var(--I-border);
+
+          @if $value==top {
+            border-right: var(--I-border);
+          } @else if $value==bottom {
+            border-left: var(--I-border);
+          } @else if $value==left {
+            border-top: var(--I-border);
+          } @else if $value==right {
+            border-bottom: var(--I-border);
+          }
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: var(--I-arrow-size);
+    height: var(--I-arrow-size);
+    z-index: -1;
+
+    &::before {
+      position: absolute;
+      transform: rotate(45deg);
+      content: '';
+      width: var(--I-arrow-size);
+      height: var(--I-arrow-size);
+      border-right: inherit;
+      border-bottom: inherit;
+      background-color: var(--I-tooltip-content-bg);
+      z-index: -1;
+    }
+  }
+}
+
+.tooltip-fade-enter-from,
+.tooltip-fade-leave-to {
+  opacity: 0;
+}

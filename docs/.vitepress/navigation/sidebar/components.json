@@ -22,6 +22,10 @@
         {
           "text": "Checkbox",
           "link": "checkbox"
+        },
+        {
+          "text": "Tooltip",
+          "link": "tooltip"
         }
       ]
     }

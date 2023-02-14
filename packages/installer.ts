@@ -1,8 +1,8 @@
 import type { App, Plugin } from 'vue';
 
-import { IButton, Iicon } from './components';
+import { IButton, IIcon } from './components';
 
-const component = [IButton, Iicon] as Plugin[];
+const component = [IButton, IIcon] as Plugin[];
 
 export const install = function (app: App) {
   component.forEach((i) => app.use(i));

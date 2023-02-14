@@ -16,11 +16,9 @@
   .tooltip-fade-enter-active {
     transition: all 0.3s ease;
   }
-
   .tooltip-fade-leave-active {
     transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
   }
-
   .tooltip-fade-enter-from,
   .tooltip-fade-leave-active {
     margin-left: 20px;

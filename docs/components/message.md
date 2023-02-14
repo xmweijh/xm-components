@@ -1,4 +1,4 @@
-# message 文档
+# Message 文档
 
 ## 安装
 ```javascript
@@ -24,7 +24,7 @@ message/types
 
 ## 消息属性
 
-| 属性     | 说明         | 类型   | 接收值                                        | Default |
+| 属性     | 说明         | 类型   | 接收值                                        | 默认值 |
 | -------- | ------------ | ------ | --------------------------------------------- | ------- |
 | content  | 消息内容     | string | —                                             | —       |
 | type     | 消息类型     | string | success \| warning \| error\| info \| loading | info    |

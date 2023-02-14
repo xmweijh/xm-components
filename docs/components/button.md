@@ -86,7 +86,7 @@ button/buttongroup
 :::
 
 ## 按钮属性
-| 属性         | 说明           | 类型    | 接收值                                                  | Default |
+| 属性         | 说明           | 类型    | 接收值                                                  | 默认值 |
 | ------------ | -------------- | ------- | ------------------------------------------------------- | ------- |
 | size         | 按钮尺寸       | string  | large \| default  \| small \| mini                      | default |
 | type         | 按钮类型       | string  | primary \| success \| warning \| danger \| info \| text | —       |

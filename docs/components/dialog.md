@@ -1,4 +1,4 @@
-# dialog 文档
+# Dialog 文档
 
 ## 安装
 ```javascript
@@ -55,20 +55,22 @@ dialog/draggable
 
 ## 属性
 
-| Attribute             | Description              | Type                                             | Accepted Values | Default |
-| --------------------- | ------------------------ | ------------------------------------------------ | --------------- | ------- |
-| model-value / v-model | 是否隐藏对话框           | boolean                                          | —               | —       |
-| title                 | 对话框的标题             | string                                           | —               | —       |
-| width                 | 对话框的宽度             | string / number                                  | —               | 50%     |
-| top                   | 对话框的`margin-top`     | string                                           | —               | 15vh    |
-| open-delay            | 打开对话框前的延迟       | number                                           | —               | 0       |
-| close-delay           | 关闭对话框前的延迟       | number                                           | —               | 0       |
-| close-on-click-modal  | 点击模态层是否关闭对话框 | boolean                                          | —               | true    |
-| close-on-press-escape | 按下esc键是否关闭对话框  | boolean                                          | —               | true    |
-| show-close            | header是否展示关闭按钮   | boolean                                          | —               | true    |
-| before-close          | 关闭对话框的回调函数     | function(done)，done is used to close the Dialog | —               | —       |
-| draggable             | 对话框是否可以拖拽       | boolean                                          | —               | false   |
-| center                | header和footer是否居中   | boolean                                          | —               | false   |
+| 属性                  | 说明                     | 类型                                             | 接收值 | 默认值 |
+| --------------------- | ------------------------ | ------------------------------------------------ | ------ | ------ |
+| model-value / v-model | 是否隐藏对话框           | boolean                                          | —      | —      |
+| title                 | 对话框的标题             | string                                           | —      | —      |
+| width                 | 对话框的宽度             | string / number                                  | —      | 50%    |
+| top                   | 对话框的`margin-top`     | string                                           | —      | 15vh   |
+| open-delay            | 打开对话框前的延迟       | number                                           | —      | 0      |
+| close-delay           | 关闭对话框前的延迟       | number                                           | —      | 0      |
+| close-on-click-modal  | 点击模态层是否关闭对话框 | boolean                                          | —      | true   |
+| close-on-press-escape | 按下esc键是否关闭对话框  | boolean                                          | —      | true   |
+| show-close            | header是否展示关闭按钮   | boolean                                          | —      | true   |
+| before-close          | 关闭对话框的回调函数     | function(done)，done is used to close the Dialog | —      | —      |
+| draggable             | 对话框是否可以拖拽       | boolean                                          | —      | false  |
+| center                | header和footer是否居中   | boolean                                          | —      | false  |
+
+
 
 ## 插槽
 
