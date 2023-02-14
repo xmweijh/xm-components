@@ -1,0 +1,55 @@
+.mzl-switch-default {
+  display: flex;
+  align-items: center;
+  .mzl-switch-left-text,
+  .mzl-switch-right-text {
+    font-size: 14px;
+    // transition: all .3s ease; 表示设置元素的过渡效果。在这里，all 表示所有属性都会应用过渡效果，
+    // .3s 表示过渡时间为0.3秒，ease 表示过渡效果的速度函数为缓动函数。
+    transition: all 0.3s ease;
+    color: #505050;
+  }
+  .mzl-switch-left-text {
+    margin-right: 7px;
+  }
+  .mzl-switch-right-text {
+    margin-left: 7px;
+  }
+  .mzl-switch-content {
+    width: 40px;
+    height: 20px;
+    background: #bfbfbf;
+    border-radius: 10px;
+    // cursor: pointer; 的作用是改变鼠标指针的外观，以表明该元素是一个可交互的元素，比如按钮、链接、可拖动元素、输入框等。
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    .mzl-switch-round {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      top: 1px;
+      transition: all 0.3s ease;
+    }
+    .mzl-switch-flagtext {
+      height: 18px;
+      display: inline-block;
+      border-radius: 50%;
+      color: #fff;
+      position: absolute;
+      top: 1px;
+      transition: all 0.3s ease;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+  .mzl-switch-disabled {
+    // 该元素的不透明度（opacity）会降低至0.5，即半透明状态，
+    // 同时鼠标指针变为"no-drop"，表示不可用状态。这通常用于禁用用户界面中的交互元素。
+    opacity: 0.5;
+    cursor: no-drop;
+  }
+}

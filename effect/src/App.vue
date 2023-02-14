@@ -1,15 +1,10 @@
-<script setup lang="ts">
-  import { IMessage } from '@packages/index';
-
-  const open = (type: string) => {
-    IMessage[type]('This is a message');
-  };
+<!-- html -->
+<script lang="ts" setup>
+  import { ref } from 'vue';
+  const switchVal = ref(false);
 </script>
 
+<!-- js -->
 <template>
-  <i-button @click="open('info')">信息</i-button>
-  <i-button type="success" @click="open('success')">成功</i-button>
-  <i-button type="warning" @click="open('warning')">警告</i-button>
-  <i-button type="error" @click="open('error')">错误</i-button>
-  <i-button type="primary" @click="open('loading')">加载中</i-button>
+  <I-switch v-model="switchVal" :show-tips-text="true"></I-switch>
 </template>
