@@ -8,6 +8,7 @@ declare module '@vue/runtime-core' {
     IMessage: typeof import('xm-components')['IMessage'];
     ICheckbox: typeof import('xm-components')['ICheckbox'];
     ITooltip: typeof import('xm-components')['ITooltip'];
+    IInput: typeof import('xm-components')['IInput'];
   }
 }
 

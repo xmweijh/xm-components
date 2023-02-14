@@ -23,6 +23,14 @@ module.exports = {
     // https://github.com/kristerkari/stylelint-scss scsslint规范配置
     'scss/comment-no-loud': true, // 禁止使用/*注释
     'scss/comment-no-empty': true, // 禁止空注释
+    // 类名选择器命名规则
+    'selector-class-pattern': [
+      '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+      {
+        message: 'Expected class selector to be kebab-case',
+        severity: 'warning',
+      },
+    ],
   },
   ignoreFiles: ['**/*.js', '**/*.ts'],
 };
