@@ -1,0 +1,191 @@
+.k-input {
+  font-size: 14px;
+  display: inline-block;
+  position: relative;
+
+  .k-input__inner {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 15px;
+    width: 100%;
+
+    &::placeholder {
+      color: #c2c2ca;
+    }
+
+    &:hover {
+      border: 1px solid #c0c4cc;
+    }
+
+    &:focus {
+      border: 1px solid #409eff;
+    }
+  }
+}
+
+// 禁用状态
+.k-input.is-disabled {
+  .k-input__inner {
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+    color: #c0c4cc;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: #c3c4cc;
+    }
+  }
+}
+
+//size
+.k-input.k-input--medium {
+  .k-input__inner {
+    height: 36px;
+
+    &::placeholder {
+      font-size: 15px;
+    }
+  }
+}
+
+.k-input.k-input--small {
+  .k-input__inner {
+    height: 32px;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+}
+
+.k-input.k-input--mini {
+  .k-input__inner {
+    height: 28px;
+
+    &::placeholder {
+      font-size: 13px;
+    }
+  }
+}
+
+//清除部分
+.k-input__suffix {
+  position: absolute;
+  right: 10px;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #c0c4cc;
+}
+
+//icon
+
+.k-input__suffix,
+.k-input__prefix {
+  position: absolute;
+  right: 10px;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #c0c4cc;
+  font-size: 15px;
+}
+
+.no-cursor {
+  cursor: default;
+}
+
+.k-input--prefix.k-input__inner {
+  padding-left: 30px;
+}
+
+.k-input__prefix {
+  position: absolute;
+  width: 20px;
+  cursor: default;
+  left: 10px;
+}
+
+//文本域
+.k-textarea {
+  width: 100%;
+
+  .k-textarea__inner {
+    display: block;
+    padding: 5px 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    color: #606266;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: #c2c2ca;
+    }
+
+    &:hover {
+      border: 1px solid #c0c4cc;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid #409eff;
+    }
+  }
+}
+
+//复合输入框
+.k-input.k-input-group.k-input-append,
+.k-input.k-input-group.k-input-prepend {
+  line-height: normal;
+  display: inline-table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  .k-input__inner {
+    border-radius: 0 4px 4px 0;
+  }
+
+  //复合输入框
+  .k-input__prepend,
+  .k-input__append {
+    background-color: #f5f7fa;
+    color: #909399;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    border-radius: 4 0px 0px 4px;
+    padding: 0 20px;
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  .k-input__append {
+    border-radius: 0 4px 4px 0px;
+  }
+}
+
+.k-input.k-input-group.k-input-append {
+  .k-input__inner {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}

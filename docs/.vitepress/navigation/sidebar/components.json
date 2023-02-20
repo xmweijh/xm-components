@@ -22,6 +22,14 @@
         {
           "text": "Checkbox",
           "link": "checkbox"
+        },
+        {
+          "text": "Input",
+          "link": "input"
+        },
+        {
+          "text": "Switch",
+          "link": "switch"
         }
       ]
     }

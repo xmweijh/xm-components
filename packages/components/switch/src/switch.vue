@@ -1,9 +1,9 @@
 <script lang="ts" setup>
   import { reactive, ref, watchEffect } from 'vue';
-  import { DialogProps } from './switches';
+  import { DialogProps } from './switch';
 
   const props = defineProps(DialogProps);
-  const emit = defineEmits(['updata:modelValue', 'change']);
+  const emit = defineEmits(['updata:modelValue', 'change', 'update:modelValue']);
   const roundStyle = reactive({ left: '2px' });
   const flagTextStyle = reactive({ left: props.width - 20 + 'px' });
   const switchStyle = reactive({ background: props.closeColor });
@@ -65,5 +65,5 @@
 </template>
 
 <style lang="scss">
-  @import './switches.scss';
+  @import './switch.scss';
 </style>

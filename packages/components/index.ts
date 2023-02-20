@@ -3,4 +3,5 @@ export * from './icon';
 export * from './dialog';
 export * from './checkbox';
 export * from './message';
-export * from './switches';
+export * from './switch';
+export * from './input';
