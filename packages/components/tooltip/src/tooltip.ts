@@ -9,6 +9,10 @@ export const TooltipProps = {
     type: String as PropType<'light' | 'dark'>,
     default: 'light',
   },
+  transitionName: {
+    type: String,
+    default: 'tooltip-fade',
+  },
   disabled: Boolean,
   rawContent: Boolean,
 };

@@ -5,3 +5,4 @@ export * from './checkbox';
 export * from './message';
 export * from './tooltip';
 export * from './input';
+export * from './date';

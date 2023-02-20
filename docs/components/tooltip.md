@@ -45,7 +45,7 @@ tooltip/html
 :::
 
 ## 自定义其他功能
-提供了disabled属性使你控制提示框的开关，并可通过修改tooltip-fade实现更多动画效果。
+提供了disabled属性使你控制提示框的开关，并可通过修改transition-name实现更多动画效果。
 :::demo
 
 tooltip/advance
@@ -53,13 +53,12 @@ tooltip/advance
 :::
 
 ## 提示框属性
-| 属性        | 说明                                         | 类型    | 接收值                         | 默认值 |
-| ----------- | -------------------------------------------- | ------- | ------------------------------ | ------ |
-| effect      | 提示框主题: `dark` / `light`，也可以自定义   | string  | string                         | light  |
-| content     | 展示内容，可以通过具名插槽`slot#content`重写 | String  | —                              | —      |
-| raw-content | 是否使用HTML内容                             | boolean | —                              | false  |
-| placement   | 提示框的位置                                 | string  | top \| bottom \| left \| right | bottom |
-| disabled    | 是否禁止提示框功能                           | boolean | —                              | false  |
-
-
+| 属性            | 说明                                         | 类型    | 接收值                         | 默认值       |
+| --------------- | -------------------------------------------- | ------- | ------------------------------ | ------------ |
+| effect          | 提示框主题: `dark` / `light`，也可以自定义   | string  | string                         | light        |
+| content         | 展示内容，可以通过具名插槽`slot#content`重写 | String  | —                              | —            |
+| raw-content     | 是否使用HTML内容                             | boolean | —                              | false        |
+| placement       | 提示框的位置                                 | string  | top \| bottom \| left \| right | bottom       |
+| disabled        | 是否禁止提示框功能                           | boolean | —                              | false        |
+| transition-name | 自定义动画效果                               | boolean | —                              | tooltip-fade |
 

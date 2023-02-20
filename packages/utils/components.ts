@@ -8,7 +8,7 @@ export function createNamespace(name: string) {
   const createBEM = (suffix?: string): string => {
     // 没传参返回前缀suffix就行
     if (!suffix) return namespace;
-    // 判断传参的是下级元素(--)还是修饰符(__)
+    // 判断传参的是下级元素(__)还是修饰符(--)
     return suffix.startsWith('--') ? `${namespace}${suffix}` : `${namespace}__${suffix}`;
   };
 

@@ -9,6 +9,12 @@ declare module '@vue/runtime-core' {
     ICheckbox: typeof import('xm-components')['ICheckbox'];
     ITooltip: typeof import('xm-components')['ITooltip'];
     IInput: typeof import('xm-components')['IInput'];
+    IDate: typeof import('xm-components')['IDate'];
+  }
+}
+declare global {
+  interface Date {
+    format(fmt: string): string;
   }
 }
 

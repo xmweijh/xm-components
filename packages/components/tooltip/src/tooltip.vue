@@ -77,7 +77,7 @@
 <template>
   <div ref="tooltipRef" :class="createBEM()" v-on="events">
     <slot></slot>
-    <Transition name="tooltip-fade">
+    <Transition :name="transitionName">
       <div
         v-if="visible"
         :class="[createBEM('content'), `is-${effect}`]"

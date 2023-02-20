@@ -1,0 +1,594 @@
+.date-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.date-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.date-fade-enter-from,
+.date-fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.I-date {
+  --I-date-border: 1px solid #dcdfe6f6;
+  width: 200px;
+  display: inline-block;
+
+  &__inner {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .I-date__option,
+    .I-date__option--default {
+      width: 160%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: var(--I-color-white);
+      top: 35px;
+      z-index: 999999;
+
+      .I-date__fipx {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 13px;
+        padding: 4px 0px;
+        box-sizing: border-box;
+        background-color: var(--I-color-white);
+        border: var(--I-date-border);
+        border-radius: 3px;
+        transition: all 0.1s ease;
+        box-shadow: var(--I-box-shadow);
+        z-index: 999999;
+
+        &:before {
+          position: absolute;
+          top: -7px;
+          right: 66%;
+          content: '';
+          width: 11px;
+          height: 11px;
+          transform: rotate(45deg);
+          border-left: var(--I-date-border);
+          border-top: var(--I-date-border);
+          background-color: var(--I-color-white);
+          z-index: 10;
+        }
+
+        .I-date__date {
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .I-date__option--small {
+      width: 140%;
+      top: 33px;
+    }
+
+    .I-date__option--mini {
+      width: 120%;
+      top: 32px;
+    }
+  }
+
+  &__header,
+  &__header--default {
+    width: 100%;
+    height: 38px;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0 10px;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 38px;
+    font-size: 14px;
+
+    &__btn--left {
+      width: 20%;
+      float: left;
+      text-align: left;
+
+      .I-icon {
+        cursor: pointer;
+
+        &:hover {
+          color: var(--I-date-acitve-color);
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &__btn--center {
+      width: 60%;
+      float: left;
+      text-align: center;
+      color: #505050;
+      font-size: 14px;
+      user-select: none;
+
+      .chooseYear {
+        cursor: pointer;
+
+        &:hover {
+          color: var(--I-date-acitve-color);
+        }
+      }
+
+      .chooseMonth {
+        cursor: pointer;
+
+        &:hover {
+          color: var(--I-date-acitve-color);
+        }
+      }
+    }
+
+    &__btn--right {
+      width: 20%;
+      float: left;
+      text-align: right;
+
+      .I-icon {
+        cursor: pointer;
+
+        &:hover {
+          color: var(--I-date-acitve-color);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  &__header--small {
+    height: 34px;
+    padding: 0 10px;
+    line-height: 34px;
+    font-size: 13px;
+  }
+
+  &__header--mini {
+    height: 28px;
+    padding: 0 10px;
+    line-height: 28px;
+    font-size: 12px;
+  }
+
+  &__content,
+  &__content--default {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    &__date {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      table {
+        width: 100%;
+        box-sizing: border-box;
+        border-spacing: 0;
+
+        tbody {
+          tr {
+            height: 28px;
+            font-size: 13px;
+            user-select: none;
+
+            td {
+              padding: 4px 4px;
+              box-sizing: border-box;
+              text-align: left;
+              line-height: 30px;
+              color: #505050;
+              font-weight: 500;
+              border-right: 0;
+              border-top: 0;
+              text-align: center;
+              cursor: pointer;
+
+              span {
+                color: #505050;
+                width: 25px;
+                height: 25px;
+                box-sizing: border-box;
+                display: inline-block;
+                line-height: 25px;
+                border-radius: 2px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                  background: #f5f5f5;
+                  color: var(--I-date-acitve-color);
+                  font-weight: 600;
+                }
+              }
+
+              span.active {
+                background: var(--I-date-acitve-color);
+                color: var(--I-color-white);
+                font-weight: 600;
+              }
+
+              span.prev-month,
+              span.next-month {
+                color: #cecbcb;
+              }
+
+              span.date-span-disabled {
+                width: 100%;
+                background: #f5f5f5;
+                color: #cecbcb;
+                cursor: no-drop;
+                padding: 0 4px;
+
+                &:hover {
+                  color: #cecbcb;
+                  font-weight: normal;
+                }
+              }
+            }
+
+            td.date-span-disabled {
+              padding: 4px 0;
+            }
+
+            th {
+              padding: 0;
+              box-sizing: border-box;
+
+              span {
+                color: #505050;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__today {
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 14px;
+      border-top: 1px solid #f0f0f0;
+
+      span {
+        color: var(--I-date-acitve-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__content--small {
+    width: 100%;
+    padding: 0 10px;
+
+    .I-date__content__date {
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      table {
+        width: 100%;
+
+        tbody {
+          tr {
+            height: 25px;
+            font-size: 13px;
+
+            td {
+              padding: 2px 2px;
+              line-height: 27px;
+              font-weight: 500;
+              cursor: pointer;
+
+              span {
+                color: #505050;
+                width: 22px;
+                height: 22px;
+                line-height: 22px;
+                border-radius: 2px;
+                font-size: 13px;
+
+                &:hover {
+                  font-weight: 550;
+                }
+              }
+
+              span.active {
+                font-weight: 550;
+              }
+
+              span.prev-month,
+              span.next-month {
+                color: #cecbcb;
+              }
+
+              span.date-span-disabled {
+                width: 100%;
+                background: #f5f5f5;
+                color: #cecbcb;
+                cursor: no-drop;
+                padding: 0 2px;
+
+                &:hover {
+                  color: #cecbcb;
+                  font-weight: normal;
+                }
+              }
+            }
+
+            td.date-span-disabled {
+              padding: 2px 0;
+            }
+
+            th {
+              padding: 0;
+              box-sizing: border-box;
+
+              span {
+                color: #505050;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__content--mini {
+    width: 100%;
+    padding: 0 8px;
+
+    .I-date__content__date {
+      padding-bottom: 10px;
+      padding-top: 6px;
+
+      table {
+        width: 100%;
+
+        tbody {
+          tr {
+            height: 22px;
+            font-size: 12px;
+
+            td {
+              padding: 2px 2px;
+              line-height: 24px;
+              font-weight: 500;
+              cursor: pointer;
+
+              span {
+                color: #505050;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                border-radius: 2px;
+                font-size: 12px;
+
+                &:hover {
+                  font-weight: 550;
+                }
+              }
+
+              span.active {
+                font-weight: 550;
+              }
+
+              span.prev-month,
+              span.next-month {
+                color: #cecbcb;
+              }
+
+              span.date-span-disabled {
+                width: 100%;
+                background: #f5f5f5;
+                color: #cecbcb;
+                cursor: no-drop;
+                padding: 0 2px;
+
+                &:hover {
+                  color: #cecbcb;
+                  font-weight: normal;
+                }
+              }
+            }
+
+            td.date-span-disabled {
+              padding: 2px 0;
+            }
+
+            th {
+              padding: 0;
+              box-sizing: border-box;
+
+              span {
+                color: #505050;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__year,
+  &__year--default {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+
+    div {
+      width: 25%;
+      height: 60px;
+      display: inline-block;
+      font-size: 14px;
+      text-align: center;
+      line-height: 60px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+      color: #505050;
+
+      span {
+        width: 45px;
+        height: 25px;
+        border-radius: 2px;
+        display: inline-block;
+        line-height: 25px;
+
+        &:hover {
+          background: #f5f5f5;
+          color: var(--I-date-acitve-color);
+        }
+      }
+
+      span.active {
+        background: var(--I-date-acitve-color);
+        color: var(--I-color-white);
+      }
+    }
+  }
+
+  &__year--small {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 18px 8px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+
+    div {
+      width: 25%;
+      height: 50px;
+      font-size: 13px;
+      line-height: 50px;
+
+      span {
+        width: 42px;
+        height: 22px;
+        border-radius: 2px;
+        display: inline-block;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__year--mini {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 16px 6px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+
+    div {
+      width: 25%;
+      height: 45px;
+      font-size: 12px;
+      line-height: 45px;
+
+      span {
+        width: 40px;
+        height: 20px;
+        border-radius: 2px;
+        display: inline-block;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__month,
+  &__month--default {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+
+    div {
+      width: 25%;
+      height: 60px;
+      display: inline-block;
+      font-size: 14px;
+      text-align: center;
+      line-height: 60px;
+      cursor: pointer;
+      user-select: none;
+      color: #505050;
+
+      span {
+        width: 45px;
+        height: 25px;
+        border-radius: 2px;
+        display: inline-block;
+        line-height: 25px;
+
+        &:hover {
+          background: #f5f5f5;
+          color: var(--I-date-acitve-color);
+        }
+      }
+
+      span.active {
+        background: var(--I-date-acitve-color);
+        color: var(--I-color-white);
+      }
+    }
+  }
+
+  &__month--small {
+    padding: 18px 8px;
+
+    div {
+      height: 55px;
+      font-size: 13px;
+      line-height: 55px;
+
+      span {
+        width: 42px;
+        height: 22px;
+        border-radius: 2px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__month--mini {
+    padding: 16px 6px;
+
+    div {
+      height: 50px;
+      font-size: 12px;
+      line-height: 50px;
+
+      span {
+        width: 40px;
+        height: 20px;
+        border-radius: 2px;
+        line-height: 20px;
+      }
+    }
+  }
+}

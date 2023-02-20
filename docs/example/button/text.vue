@@ -24,7 +24,7 @@
     }}</i-button>
   </div>
 
-  <p>Disabled text button</p>
+  <p>被禁止的文本按钮</p>
   <div class="flex justify-space-between flex-wrap gap-4">
     <i-button v-for="button in buttons" :key="button.text" :type="button.type" text disabled>{{
       button.text
