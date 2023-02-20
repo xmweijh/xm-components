@@ -39,6 +39,20 @@ npm run docs:dev
 npm run ct '组件名称'
 ```
 
+## 单元测试
+
+模版内置了vitest，通过`npm run ct`创建的组件默认会在组件的目录下创建一个名为`__tests__`的目录，里面有一个简单的测试模版
+
+测试命令：
+
+``` bash
+# 运行test测试
+npm run test
+# 覆盖率输出
+npm run test:coverage
+```
+
+
 ### Production
 
 - 打包组件库
