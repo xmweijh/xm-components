@@ -39,7 +39,7 @@ icon/size
 <IconList />
 
 ## 图表属性
-| 属性  | 说明     | 类型                     | 接收值 | Default            |
+| 属性  | 说明     | 类型                     | 接收值 | 默认值            |
 | ----- | -------- | ------------------------ | ------ | ------------------ |
 | color | 图标颜色 | <CSSProperties, 'color'> | -      | inherit from color |
 | size  | 图表尺寸 | number                   | -      | inherit from size  |

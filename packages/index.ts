@@ -16,11 +16,24 @@ import {
   IMessage,
   ICheckbox,
   ISwitch,
+  ITooltip,
   IInput,
+  IDate,
 } from './components';
 export * from './components';
 
-const components = { IButton, IButtonGroup, IIcon, IDialog, IMessage, ICheckbox, ISwitch, IInput };
+const components = {
+  IButton,
+  IButtonGroup,
+  IIcon,
+  IDialog,
+  IMessage,
+  ICheckbox,
+  ISwitch,
+  ITooltip,
+  IInput,
+  IDate,
+};
 /**
  * 组件注册
  * @param {App} app Vue 对象

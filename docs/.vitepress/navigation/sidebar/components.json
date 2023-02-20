@@ -24,6 +24,10 @@
           "link": "checkbox"
         },
         {
+          "text": "Tooltip",
+          "link": "tooltip"
+        },
+        {
           "text": "Input",
           "link": "input"
         },

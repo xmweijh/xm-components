@@ -3,5 +3,7 @@ export * from './icon';
 export * from './dialog';
 export * from './checkbox';
 export * from './message';
-export * from './switch';
+export * from './tooltip';
 export * from './input';
+export * from './date';
+export * from './switch';
