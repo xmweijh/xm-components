@@ -63,4 +63,18 @@ checkbox/demo6
 checkbox/demo7
 :::
 
+## 属性
+
+| Attribute             | Description              | Type                                             | Accepted Values | Default |
+| --------------------- | ------------------------ | ------------------------------------------------ | --------------- | ------- |
+| v-model               | 多选绑定值              | array                                            | —               | —       |
+| size                  | 尺寸大小                | string                                      |default / small / mini| default  |
+| options               | 多选数据配置             |                 |          | array                                            | —               | []       |
+| inline               | 是否为行内元素           | boolean                                          | —               | true    |
+| labelFiled           | 自定义替换lable的字段名   | string                                            | —              | label   |
+| valueFiled             | 自定义替换value的字段名  | string                                            | —               | value  |
+| customColor            | 自定义选中颜色色值        | string                                            | —               | —    |
+| customClass             | 自定义组件类名          | string                                             | —                | —    |
+
+
 
