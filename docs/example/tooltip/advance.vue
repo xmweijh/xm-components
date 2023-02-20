@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+  import { ref } from 'vue';
+
+  const disabled = ref(false);
+</script>
+
 <template>
   <I-tooltip
     :disabled="disabled"
@@ -10,12 +16,6 @@
     >
   </I-tooltip>
 </template>
-
-<script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const disabled = ref(false);
-</script>
 
 <style>
   .myComponent-enter-active {
