@@ -1,11 +1,13 @@
-<script lang="ts" setup>
+<!-- html -->
+<template>
+  <I-date v-model="dateVal" placeholder="请选择日期" @change="dateChange"></I-date>
+</template>
+
+<!-- js -->
+<script setup>
   import { ref } from 'vue';
-  const switchVal = ref<boolean>(false);
-  const switchChange = (e: MouseEvent) => {
+  const dateVal = ref('');
+  const dateChange = (e) => {
     console.log(e);
   };
 </script>
-
-<template>
-  <I-switch v-model="switchVal" @change="switchChange"></I-switch>
-</template>
