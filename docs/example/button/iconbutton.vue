@@ -17,3 +17,9 @@
     <i-button type="danger" icon="delete" circle />
   </div>
 </template>
+
+<style>
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+</style>

@@ -17,3 +17,9 @@
     <i-button type="danger" plain disabled>Danger</i-button>
   </div>
 </template>
+
+<style>
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+</style>

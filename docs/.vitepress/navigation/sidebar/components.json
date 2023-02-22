@@ -1,43 +1,75 @@
 {
   "/components/": [
     {
-      "text": "组件",
+      "text": "基础组件",
       "items": [
         {
-          "text": "Button",
+          "text": "Button 按钮",
           "link": "button"
         },
         {
-          "text": "Icon",
+          "text": "Icon 图标",
           "link": "icon"
-        },
+        }
+      ]
+    },
+    {
+      "text": "布局组件",
+      "items": [
         {
-          "text": "Dialog",
-          "link": "dialog"
-        },
+          "text": "Card 卡片",
+          "link": "card"
+        }
+      ]
+    },
+    {
+      "text": "表单组件",
+      "items": [
         {
-          "text": "Message",
-          "link": "message"
-        },
-        {
-          "text": "Checkbox",
+          "text": "Checkbox 多选框",
           "link": "checkbox"
         },
         {
-          "text": "Tooltip",
-          "link": "tooltip"
-        },
-        {
-          "text": "Input",
+          "text": "Input 输入框",
           "link": "input"
         },
         {
-          "text": "Switch",
+          "text": "Switch 开关",
           "link": "switch"
         },
         {
           "text": "Pagination",
           "link": "pagination"
+        },
+        {
+          "text": "Date 日期选择器",
+          "link": "date"
+        }
+      ]
+    },
+    {
+      "text": "交互组件",
+      "items": [
+        {
+          "text": "Dialog 对话框",
+          "link": "dialog"
+        },
+        {
+          "text": "Message 消息",
+          "link": "message"
+        },
+        {
+          "text": "Tooltip 提示",
+          "link": "tooltip"
+        }
+      ]
+    },
+    {
+      "text": "功能组件",
+      "items": [
+        {
+          "text": "Weather 天气",
+          "link": "weather"
         }
       ]
     }

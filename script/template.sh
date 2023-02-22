@@ -11,7 +11,7 @@ FILE_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")/../packages" && pwd)
 PREFIX_NAME="I"
 
 # 启动脚本后面是否有写 name
-if [ "$#" -ne 1 ] || [ $NAME =~ $re ] || [ "$NAME" == "" ]; then
+if [ "$#" -ne 1 ] || [ "$NAME" == "" ]; then
   echo -e "\033[0;31m[ERROR] npm run ct \${name} 输入的字符错误 \033[0m"
   exit 1
 fi
@@ -29,22 +29,29 @@ fi
 mkdir -p "$FILENAME"
 mkdir -p "$FILENAME/src"
 
+# 标准组件命名
+HANDLE_NAME=""
+for i in $(echo $NAME | sed 's/[_|-]\([a-z]\)/\ \1/;s/^\([a-z]\)/\ \1/'); do
+  C=$(echo "${i:0:1}" | tr "[:lower:]" "[:upper:]")
+  HANDLE_NAME="$HANDLE_NAME${C}${i:1}"
+done
+COM_NAME=$HANDLE_NAME
+
 # 生成文件.vue 并写入模板
 cat > $FILENAME/src/${NAME}.vue <<EOF
 <script lang="ts" setup>
-  defineProps<{}>();
-
+  import { ${COM_NAME}Props } from './${COM_NAME}.ts';
+  defineProps(${COM_NAME}Props);
   defineOptions({
-    name: '${NAME}',
+    name: '${PREFIX_NAME}${COM_NAME}',
   });
 </script>
-
 <template>
-  <div> ${PREFIX_NAME}${NAME} components </div>
+  <div> ${PREFIX_NAME}${COM_NAME} components </div>
 </template>
-
 <style scoped></style>
 EOF
+
 
 # 生成导入模板文件 index.ts
 cat <<EOF >"$FILENAME/index.ts"

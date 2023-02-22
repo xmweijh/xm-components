@@ -39,6 +39,20 @@ npm run docs:dev
 npm run ct '组件名称'
 ```
 
+## 单元测试
+
+在packages中的tests文件夹中进行测试代码的书写。
+
+测试命令：
+
+``` bash
+# 运行test测试
+npm run test
+# 覆盖率输出
+npm run test:coverage
+```
+
+
 ### Production
 
 - 打包组件库
