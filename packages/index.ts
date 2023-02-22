@@ -19,6 +19,7 @@ import {
   ITooltip,
   IInput,
   IDate,
+  IPagination,
 } from './components';
 export * from './components';
 
@@ -33,6 +34,7 @@ const components = {
   ITooltip,
   IInput,
   IDate,
+  IPagination,
 };
 /**
  * 组件注册

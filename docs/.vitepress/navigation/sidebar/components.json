@@ -34,6 +34,10 @@
         {
           "text": "Switch",
           "link": "switch"
+        },
+        {
+          "text": "Pagination",
+          "link": "pagination"
         }
       ]
     }

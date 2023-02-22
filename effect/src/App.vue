@@ -1,11 +1,4 @@
-<script lang="ts" setup>
-  import { ref } from 'vue';
-  const switchVal = ref<boolean>(false);
-  const switchChange = (e: MouseEvent) => {
-    console.log(e);
-  };
-</script>
-
+<!-- html -->
 <template>
-  <I-switch v-model="switchVal" @change="switchChange"></I-switch>
+  <I-pagination :total="100" :current="1" :page-size="10"></I-pagination>
 </template>
