@@ -50,6 +50,15 @@
           "link": "tooltip"
         }
       ]
+    },
+    {
+      "text": "功能组件",
+      "items": [
+        {
+          "text": "Weather 天气",
+          "link": "weather"
+        }
+      ]
     }
   ]
 }
