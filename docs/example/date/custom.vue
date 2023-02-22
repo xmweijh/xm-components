@@ -11,3 +11,9 @@
   import { ref } from 'vue';
   const dateVal = ref('');
 </script>
+
+<style>
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+</style>

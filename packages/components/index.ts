@@ -7,3 +7,4 @@ export * from './tooltip';
 export * from './input';
 export * from './date';
 export * from './switch';
+export * from './card';
