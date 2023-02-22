@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+  import { ref } from 'vue';
+
+  const currentDate = ref(new Date());
+</script>
+
 <template>
   <I-card :body-style="{ padding: '0px' }" class="box-card">
     <img
@@ -13,12 +19,6 @@
     </div>
   </I-card>
 </template>
-
-<script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const currentDate = ref(new Date());
-</script>
 
 <style>
   .box-card {
