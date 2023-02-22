@@ -19,6 +19,7 @@ import {
   ITooltip,
   IInput,
   IDate,
+  IPagination,
   IWeather,
   ICard,
 } from './components';
@@ -35,6 +36,7 @@ const components = {
   ITooltip,
   IInput,
   IDate,
+  IPagination,
   IWeather,
   ICard,
 };
