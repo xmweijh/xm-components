@@ -1,3 +1,8 @@
+<script setup>
+  import { ref } from 'vue';
+  const dateVal = ref('');
+</script>
+
 <template>
   <div class="mb-4">
     <I-date v-model="dateVal" placeholder="请选择日期" format="yyyy年MM月dd日"></I-date>
@@ -6,7 +11,8 @@
   </div>
 </template>
 
-<script setup>
-  import { ref } from 'vue';
-  const dateVal = ref('');
-</script>
+<style>
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+</style>

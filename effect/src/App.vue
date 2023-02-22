@@ -1,13 +1,12 @@
-<!-- html -->
 <template>
-  <I-date v-model="dateVal" placeholder="请选择日期" @change="dateChange"></I-date>
+  <I-card shadow="always" class="box-card"> Always </I-card>
+  <I-card shadow="hover" class="box-card"> Hover </I-card>
+  <I-card shadow="never" class="box-card"> Never </I-card>
 </template>
 
-<!-- js -->
-<script setup>
-  import { ref } from 'vue';
-  const dateVal = ref('');
-  const dateChange = (e) => {
-    console.log(e);
-  };
-</script>
+<style>
+  .box-card {
+    width: 320px;
+    margin-bottom: 20px;
+  }
+</style>

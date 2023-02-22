@@ -14,6 +14,15 @@
       ]
     },
     {
+      "text": "布局组件",
+      "items": [
+        {
+          "text": "Card 卡片",
+          "link": "card"
+        }
+      ]
+    },
+    {
       "text": "表单组件",
       "items": [
         {

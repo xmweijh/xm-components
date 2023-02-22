@@ -20,6 +20,7 @@ import {
   IInput,
   IDate,
   IWeather,
+  ICard,
 } from './components';
 export * from './components';
 
@@ -35,6 +36,7 @@ const components = {
   IInput,
   IDate,
   IWeather,
+  ICard,
 };
 /**
  * 组件注册

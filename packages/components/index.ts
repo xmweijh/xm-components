@@ -8,3 +8,4 @@ export * from './input';
 export * from './date';
 export * from './switch';
 export * from './weather';
+export * from './card';
