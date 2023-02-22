@@ -38,6 +38,10 @@
           "link": "switch"
         },
         {
+          "text": "Pagination",
+          "link": "pagination"
+        },
+        {
           "text": "Date 日期选择器",
           "link": "date"
         }
