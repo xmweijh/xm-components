@@ -1,0 +1,32 @@
+.imgWrap {
+  --imgWidth: 375px;
+  --imgHeight: 561px;
+  width: var(--imgWidth);
+  height: var(--imgHeight);
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px #999;
+  position: relative;
+  .staticImg {
+    width: 100%;
+  }
+  .magWrap {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0 0 3px #999;
+    cursor: move;
+    overflow: hidden;
+    &.show {
+      display: block;
+      transform: scale(1.5);
+    }
+    .magImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
