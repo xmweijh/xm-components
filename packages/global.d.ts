@@ -11,10 +11,13 @@ declare module '@vue/runtime-core' {
     ITooltip: typeof import('xm-components')['ITooltip'];
     IInput: typeof import('xm-components')['IInput'];
     IDate: typeof import('xm-components')['IDate'];
+    IPagination: typeof import('xm-components')['IPagination'];
     IWeather: typeof import('xm-components')['IWeather'];
     ICard: typeof import('xm-components')['ICard'];
     IForm: typeof import('xm-components')['IForm'];
-    formItem: typeof import('xm-components')['IFormItem'];
+    IFormItem: typeof import('xm-components')['IFormItem'];
+    IMagnifier: typeof import('xm-components')['IMagnifier'];
+    ITransfer: typeof import('xm-components')['ITransfer'];
   }
 }
 declare global {

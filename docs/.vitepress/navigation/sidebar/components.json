@@ -42,8 +42,16 @@
           "link": "switch"
         },
         {
+          "text": "Pagination",
+          "link": "pagination"
+        },
+        {
           "text": "Date 日期选择器",
           "link": "date"
+        },
+        {
+          "text": "Transfer 穿梭框",
+          "link": "transfer"
         }
       ]
     },
@@ -70,6 +78,10 @@
         {
           "text": "Weather 天气",
           "link": "weather"
+        },
+        {
+          "text": "放大镜",
+          "link": "magnifier"
         }
       ]
     }

@@ -19,10 +19,13 @@ import {
   ITooltip,
   IInput,
   IDate,
+  IPagination,
   IWeather,
   ICard,
   IForm,
   IFormItem,
+  IMagnifier,
+  ITransfer,
 } from './components';
 export * from './components';
 
@@ -37,10 +40,13 @@ const components = {
   ITooltip,
   IInput,
   IDate,
+  IPagination,
   IWeather,
   ICard,
   IForm,
   IFormItem,
+  IMagnifier,
+  ITransfer,
 };
 /**
  * 组件注册

@@ -2,7 +2,10 @@
   box-sizing: content-box;
   --width: 300px;
   --background: #eee;
+  box-sizing: content-box;
   width: var(--width);
+  min-height: 150px;
+  min-width: 300px;
   height: calc(var(--width) / 2.5);
   background: var(--background);
   border: 1px solid #8f8f8f;
@@ -12,33 +15,46 @@
   padding: 15px 12px;
   display: grid;
   grid-template-columns: 50% 50%;
+
   .leftContent {
     .area {
       display: flex;
+
       div {
         font-size: 14px;
         margin-right: 6px;
       }
     }
+
     .tem {
       display: flex;
       font-size: 60px;
       margin-top: 20px;
       margin-left: 10px;
-      line-height: 1em;
-      div:last-child {
-        font-size: 30px;
-        padding-top: 6px;
+
+      .temText {
+        margin-left: 5px;
+        display: flex;
+
+        div:first-child {
+          line-height: 1em;
+          font-size: 60px;
+        }
+
+        div:last-child {
+          font-size: 30px;
+        }
       }
     }
   }
+
   .rightContent {
     display: inline-block;
-    line-height: 1rem;
     div {
       width: 70%;
       margin: 10px 0px;
     }
+
     div:nth-child(2) {
       font-size: 15px;
       background: #f09246;
@@ -46,5 +62,29 @@
       border-radius: 10px;
       margin-top: 10px;
     }
+  }
+}
+
+.simpleWea {
+  width: 250px;
+  height: 50px;
+  color: #eee;
+  font-size: 25px;
+  background: radial-gradient(circle at 60% 90%, rgba(46, 103, 161, 1), transparent 60%),
+    radial-gradient(circle at 20px 20px, rgba(46, 103, 161, 0.8), transparent 25%), #182336;
+  border-radius: 20px;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  div {
+    margin: 0px 6px;
+  }
+  .city {
+  }
+  .iconWea {
+    padding-top: 7px;
+  }
+  .temText {
+    display: flex;
   }
 }
