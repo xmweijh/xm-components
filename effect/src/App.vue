@@ -1,3 +1,3 @@
 <template>
-  <I-weather icon city="三亚"></I-weather>
+  <I-magnifier img-width="375" img-height="561"></I-magnifier>
 </template>

@@ -70,6 +70,10 @@
         {
           "text": "Weather 天气",
           "link": "weather"
+        },
+        {
+          "text": "放大镜",
+          "link": "magnifier"
         }
       ]
     }
