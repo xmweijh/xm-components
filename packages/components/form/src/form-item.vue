@@ -187,6 +187,7 @@
     resetField,
   };
 
+  // 为其它子组件提供依赖，方便调用表单的方法，如校验方法。
   provide(formItemContextKey, context);
 </script>
 

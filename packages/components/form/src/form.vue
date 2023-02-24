@@ -65,6 +65,7 @@
       const fields = getFieldsByProps(props);
       // 检查 fields 是否为空
       if (fields.length === 0) {
+        // 函数调用的语法糖 ()。
         callback?.(valid);
         resolve();
       }
@@ -115,6 +116,7 @@
     removeField,
   };
 
+  // 为其它子组件提供依赖，方便调用表单的方法，如校验方法。
   provide(formContextKey, context);
 
   defineExpose({

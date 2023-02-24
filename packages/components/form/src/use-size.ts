@@ -11,6 +11,7 @@ const useProp = <T>(name: string): ComputedRef<T | undefined> => {
 };
 
 // 获取formContextKey 和 formItemContextKey 的依赖注入的实例，这些属性可以用于获取和操作表单的数据和状态。
+// 其他内部组件调用，获取表单的一些操作，如实现实时校验，在内部组件调用校验方法。
 const useFormItem = () => {
   const form = inject(formContextKey, undefined);
   const formItem = inject(formItemContextKey, undefined);
