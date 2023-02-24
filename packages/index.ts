@@ -23,6 +23,7 @@ import {
   IWeather,
   ICard,
   IMagnifier,
+  ITransfer,
 } from './components';
 export * from './components';
 
@@ -41,6 +42,7 @@ const components = {
   IWeather,
   ICard,
   IMagnifier,
+  ITransfer,
 };
 /**
  * 组件注册

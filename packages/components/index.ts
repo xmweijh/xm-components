@@ -11,3 +11,4 @@ export * from './pagination';
 export * from './weather';
 export * from './card';
 export * from './magnifier';
+export * from './transfer';
