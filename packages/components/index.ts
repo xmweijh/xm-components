@@ -10,6 +10,7 @@ export * from './switch';
 export * from './pagination';
 export * from './weather';
 export * from './card';
+export * from './form';
 export * from './magnifier';
 export * from './transfer';
 export * from './cssdemo';

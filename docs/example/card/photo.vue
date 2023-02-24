@@ -20,7 +20,7 @@
   </I-card>
 </template>
 
-<style>
+<style scoped>
   .box-card {
     width: 480px;
   }

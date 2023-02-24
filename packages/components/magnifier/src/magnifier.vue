@@ -50,8 +50,11 @@
     const magHeight = getDomSize(oMagWrap, 'height');
 
     // 获取坐标
-    const imgX = remFlag.offsetLeft;
-    const imgY = remFlag.offsetTop;
+    // const imgX = remFlag.offsetLeft;
+    // const imgY = remFlag.offsetTop;
+
+    const imgX = remFlag.getBoundingClientRect().x;
+    const imgY = remFlag.getBoundingClientRect().y;
 
     // 监听鼠标在视图中的操作，并判断出边界的时候消失放大
     const handleMouseMove = (e) => {
@@ -64,6 +67,7 @@
       oMagWrap.style.top = y + 'px';
       oMagImg.style.left = -x + 'px';
       oMagImg.style.top = -y + 'px';
+      console.log(mouseX, mouseY, oMagWrap.style.left, oMagImg.style.left);
       if (mouseX < 0 || mouseY < 0 || mouseX > imgWith || mouseY > imgHeight) {
         (oMagWrap.className = 'magWrap'),
           document.removeEventListener('mousemove', handleMouseMove, false);
@@ -107,23 +111,28 @@
 </script>
 
 <template>
-  <div id="imgWrap" class="imgWrap" :style="imgStyle">
-    <a
-      class="magWrap"
-      :href="magnifierProps.link"
-      :target="magnifierProps.blank ? '_blank' : ''"
-      :style="{ width: magnifierProps.magWidth + 'px', height: magnifierProps.magHigth + 'px' }"
-    >
-      <img
-        class="magImg"
-        :src="magnifierProps.imgUrl"
-        alt=""
-        :style="{ width: magnifierProps.imgWidth + 'px', height: magnifierProps.imgHeight + 'px' }"
-      />
-    </a>
-    <a :href="magnifierProps.link">
-      <img class="staticImg" :src="magnifierProps.imgUrl" alt="" />
-    </a>
+  <div style="position: relative">
+    <div id="imgWrap" class="imgWrap" :style="imgStyle">
+      <a
+        class="magWrap"
+        :href="magnifierProps.link"
+        :target="magnifierProps.blank ? '_blank' : ''"
+        :style="{ width: magnifierProps.magWidth + 'px', height: magnifierProps.magHigth + 'px' }"
+      >
+        <img
+          class="magImg"
+          :src="magnifierProps.imgUrl"
+          alt=""
+          :style="{
+            width: magnifierProps.imgWidth + 'px',
+            height: magnifierProps.imgHeight + 'px',
+          }"
+        />
+      </a>
+      <a :href="magnifierProps.link">
+        <img class="staticImg" :src="magnifierProps.imgUrl" alt="" />
+      </a>
+    </div>
   </div>
 </template>
 
