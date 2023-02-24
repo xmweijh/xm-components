@@ -1,14 +1,3 @@
-<template>
-  <I-form :model="form" :label-width="80" size="large">
-    <I-form-item label="姓名">
-      <I-input v-model="form.name" />
-    </I-form-item>
-    <I-form-item label="国家">
-      <I-checkbox v-model="form.country" :options="checkOptions"></I-checkbox>
-    </I-form-item>
-  </I-form>
-</template>
-
 <script lang="ts" setup>
   import { reactive } from 'vue';
 
@@ -25,3 +14,14 @@
     ],
   });
 </script>
+
+<template>
+  <I-form :model="form" :label-width="80" size="large">
+    <I-form-item label="姓名">
+      <I-input v-model="form.name" />
+    </I-form-item>
+    <I-form-item label="国家">
+      <I-checkbox v-model="form.country" :options="checkOptions"></I-checkbox>
+    </I-form-item>
+  </I-form>
+</template>

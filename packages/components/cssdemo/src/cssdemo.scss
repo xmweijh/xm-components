@@ -1,0 +1,33 @@
+.textSmearing {
+  .content {
+    --font-size: 50px;
+    --corlor: #fff;
+    margin: auto;
+    color: var(--corlor);
+    font-size: var(--font-size);
+    position: relative;
+    display: table;
+  }
+  .content::before {
+    content: 'HTML CSS Typescript';
+    --time: 8s;
+    color: #06ee99;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    white-space: nowrap; //规定段落中的文本不进行换行
+    overflow: hidden;
+    border-right: 5px solid #06ee99;
+    animation: animate var(--time) linear infinite;
+    // filter: drop-shadow(0 0 50px #06ee99);
+  }
+  @keyframes animate {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}

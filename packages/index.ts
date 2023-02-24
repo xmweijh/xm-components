@@ -26,6 +26,7 @@ import {
   IFormItem,
   IMagnifier,
   ITransfer,
+  ICssdemo,
 } from './components';
 export * from './components';
 
@@ -47,6 +48,7 @@ const components = {
   IFormItem,
   IMagnifier,
   ITransfer,
+  ICssdemo,
 };
 /**
  * 组件注册

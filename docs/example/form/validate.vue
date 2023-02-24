@@ -1,17 +1,3 @@
-<template>
-  <I-form ref="formRef" :model="form" :label-width="80" :rules="rules">
-    <I-form-item label="姓名" prop="name">
-      <I-input v-model="form.name" />
-    </I-form-item>
-    <I-form-item label="国家" prop="country">
-      <I-checkbox v-model="form.country" :options="checkOptions"></I-checkbox>
-    </I-form-item>
-    <I-form-item>
-      <I-button type="primary" @click="onSubmit">Submit</I-button>
-    </I-form-item>
-  </I-form>
-</template>
-
 <script lang="ts" setup>
   import { ref, reactive } from 'vue';
 
@@ -51,3 +37,17 @@
     });
   };
 </script>
+
+<template>
+  <I-form ref="formRef" :model="form" :label-width="80" :rules="rules">
+    <I-form-item label="姓名" prop="name">
+      <I-input v-model="form.name" />
+    </I-form-item>
+    <I-form-item label="国家" prop="country">
+      <I-checkbox v-model="form.country" :options="checkOptions"></I-checkbox>
+    </I-form-item>
+    <I-form-item>
+      <I-button type="primary" @click="onSubmit">Submit</I-button>
+    </I-form-item>
+  </I-form>
+</template>
