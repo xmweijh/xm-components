@@ -1,4 +1,6 @@
 // 类型判断
+export { isArray, isObject, isDate, isPromise, isSymbol } from '@vue/shared';
+
 export const isNumber = (val: any) => typeof val === 'number';
 export const isString = (val: any) => typeof val === 'string';
 export const isFunction = (val: any) => typeof val === 'function';

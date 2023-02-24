@@ -13,6 +13,8 @@ declare module '@vue/runtime-core' {
     IDate: typeof import('xm-components')['IDate'];
     IWeather: typeof import('xm-components')['IWeather'];
     ICard: typeof import('xm-components')['ICard'];
+    IForm: typeof import('xm-components')['IForm'];
+    formItem: typeof import('xm-components')['IFormItem'];
   }
 }
 declare global {

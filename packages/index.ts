@@ -21,6 +21,8 @@ import {
   IDate,
   IWeather,
   ICard,
+  IForm,
+  IFormItem,
 } from './components';
 export * from './components';
 
@@ -37,6 +39,8 @@ const components = {
   IDate,
   IWeather,
   ICard,
+  IForm,
+  IFormItem,
 };
 /**
  * 组件注册

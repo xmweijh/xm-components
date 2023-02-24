@@ -40,7 +40,7 @@ COM_NAME=$HANDLE_NAME
 # 生成文件.vue 并写入模板
 cat > $FILENAME/src/${NAME}.vue <<EOF
 <script lang="ts" setup>
-  import { ${COM_NAME}Props } from './${COM_NAME}.ts';
+  import { ${COM_NAME}Props } from './${NAME}';
   defineProps(${COM_NAME}Props);
   defineOptions({
     name: '${PREFIX_NAME}${COM_NAME}',
@@ -49,7 +49,7 @@ cat > $FILENAME/src/${NAME}.vue <<EOF
 <template>
   <div> ${PREFIX_NAME}${COM_NAME} components </div>
 </template>
-<style scoped></style>
+<style lang="scss" scoped></style>
 EOF
 
 
@@ -58,9 +58,9 @@ cat <<EOF >"$FILENAME/index.ts"
 import { withInstall } from '../../utils/install';
 import ${NAME} from './src/${NAME}.vue';
 
-export const ${PREFIX_NAME}${NAME} = withInstall(${NAME}); // 增加类型
+export const ${PREFIX_NAME}${COM_NAME} = withInstall(${NAME}); // 增加类型
 
-export default ${PREFIX_NAME}${NAME};
+export default ${PREFIX_NAME}${COM_NAME};
 EOF
 
 # 获取example目录路径

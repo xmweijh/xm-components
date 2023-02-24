@@ -26,6 +26,10 @@
       "text": "表单组件",
       "items": [
         {
+          "text": "Form 表单",
+          "link": "form"
+        },
+        {
           "text": "Checkbox 多选框",
           "link": "checkbox"
         },

@@ -1,4 +1,5 @@
 .weatherBase {
+  box-sizing: content-box;
   --width: 300px;
   --background: #eee;
   width: var(--width);
@@ -24,6 +25,7 @@
       font-size: 60px;
       margin-top: 20px;
       margin-left: 10px;
+      line-height: 1em;
       div:last-child {
         font-size: 30px;
         padding-top: 6px;
@@ -32,6 +34,7 @@
   }
   .rightContent {
     display: inline-block;
+    line-height: 1rem;
     div {
       width: 70%;
       margin: 10px 0px;

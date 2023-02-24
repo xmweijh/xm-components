@@ -9,3 +9,4 @@ export * from './date';
 export * from './switch';
 export * from './weather';
 export * from './card';
+export * from './form';
