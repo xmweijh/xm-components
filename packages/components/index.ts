@@ -12,3 +12,4 @@ export * from './weather';
 export * from './card';
 export * from './magnifier';
 export * from './transfer';
+export * from './cssdemo';

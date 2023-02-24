@@ -39,9 +39,7 @@
     checked ? addCheckedData(leftOrRight, item) : removeCheckedData(leftOrRight, item.id);
   };
 
-  onMounted(() => {
-    console.log(leftTitle);
-  });
+  onMounted(() => {});
 
   defineOptions({
     name: 'ITransfer',

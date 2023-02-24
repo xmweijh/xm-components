@@ -24,6 +24,7 @@ import {
   ICard,
   IMagnifier,
   ITransfer,
+  ICssdemo,
 } from './components';
 export * from './components';
 
@@ -43,6 +44,7 @@ const components = {
   ICard,
   IMagnifier,
   ITransfer,
+  ICssdemo,
 };
 /**
  * 组件注册

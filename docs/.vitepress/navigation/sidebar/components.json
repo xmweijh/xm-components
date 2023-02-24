@@ -78,6 +78,10 @@
         {
           "text": "放大镜",
           "link": "magnifier"
+        },
+        {
+          "text": "随手记录的CSSDemo",
+          "link": "cssdemo"
         }
       ]
     }
