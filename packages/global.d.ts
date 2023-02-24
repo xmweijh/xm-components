@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     IWeather: typeof import('xm-components')['IWeather'];
     ICard: typeof import('xm-components')['ICard'];
     ICard: typeof import('xm-components')['IMagnifier'];
+    ICard: typeof import('xm-components')['ITransfer'];
   }
 }
 declare global {
