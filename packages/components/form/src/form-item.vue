@@ -18,7 +18,7 @@
   import { formContextKey, formItemContextKey } from './context';
   import { FormItemProps } from './form-item';
   import type { FormItemContext, FormItemRule } from './form';
-  import { useSize } from './use-size';
+  import { useSize } from './use-form';
 
   const props = defineProps(FormItemProps);
 
