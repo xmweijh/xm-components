@@ -27,6 +27,7 @@ import {
   IMagnifier,
   ITransfer,
   ICssdemo,
+  ICarousel,
 } from './components';
 export * from './components';
 
@@ -49,6 +50,7 @@ const components = {
   IMagnifier,
   ITransfer,
   ICssdemo,
+  ICarousel,
 };
 /**
  * 组件注册

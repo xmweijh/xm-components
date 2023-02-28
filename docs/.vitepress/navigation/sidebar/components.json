@@ -73,6 +73,15 @@
       ]
     },
     {
+      "text": "Data 数据展示",
+      "items": [
+        {
+          "text": "Carousel 走马灯",
+          "link": "carousel"
+        }
+      ]
+    },
+    {
       "text": "功能组件",
       "items": [
         {
