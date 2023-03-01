@@ -76,7 +76,8 @@
     "@vue/shared": "^3.2.47",
     "@vueuse/core": "^9.9.0",
     "async-validator": "^4.2.5",
-    "axios": "^1.3.3"
+    "axios": "^1.3.3",
+    "loadsh": "^0.0.4"
   },
   "peerDependencyRules": {
     "ignoreMissing": [

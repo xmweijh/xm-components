@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import { reactive, onMounted, onBeforeUnmount } from 'vue';
+  import { throttle } from 'lodash';
   import { ICarouselProps } from './carousel';
   import Dot from './dot.vue';
   import Director from './director.vue';
@@ -40,13 +41,13 @@
     }
   };
 
-  const dotClick = (index) => {
+  const dotClick = throttle((index) => {
     state.currentIndex = index;
-  };
+  }, 800);
 
-  const dirClick = (dir) => {
+  const dirClick = throttle((dir) => {
     setIndex(dir);
-  };
+  }, 800);
 
   function _clearIntervalFn() {
     clearInterval(t);
@@ -77,17 +78,17 @@
     <div class="inner">
       <div v-for="(item, index) of carouselProps.options" :key="index" class="car-item">
         <transition>
-          <img v-if="item.id === state.currentIndex" :src="item.imgUrl" alt="" />
+          <img v-show="item.id === state.currentIndex" :src="item.imgUrl" alt="" />
         </transition>
-        <Dot
-          :has-dot="carouselProps.hasDot"
-          :item-len="state.itemLen"
-          :current-index="state.currentIndex"
-          @dotClick="dotClick"
-        ></Dot>
-        <Director dir="prev" @dirClick="dirClick" />
-        <Director dir="next" @dirClick="dirClick" />
       </div>
+      <Dot
+        :has-dot="carouselProps.hasDot"
+        :item-len="state.itemLen"
+        :current-index="state.currentIndex"
+        @dotClick="dotClick"
+      ></Dot>
+      <Director dir="prev" @dirClick="dirClick" />
+      <Director dir="next" @dirClick="dirClick" />
     </div>
   </div>
 </template>
@@ -103,9 +104,17 @@
       position: relative;
 
       .car-item {
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
+        padding: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       .v-enter-active,
       .v-leave-active {
