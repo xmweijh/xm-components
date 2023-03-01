@@ -14,9 +14,6 @@ jobs:
     permissions:
       pages: write
       id-token: write
-    strategy:
-      matrix:
-        node-version: [16.x]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
