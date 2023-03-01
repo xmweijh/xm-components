@@ -10,7 +10,8 @@
     toRefs,
     useSlots,
   } from 'vue';
-  import { castArray, get, set, cloneDeep, isEqual } from 'lodash';
+  // import { _.castArray, get, set, _.cloneDeep, _.isEqual } from 'lodash';
+  import _ from 'lodash';
   import Schema from 'async-validator';
   import type { CSSProperties } from 'vue';
   import type { RuleItem } from 'async-validator';
@@ -82,19 +83,19 @@
     if (!model || !props.prop) {
       return;
     }
-    return get(model, props.prop);
+    return _.get(model, props.prop);
   });
 
   // props.rules + FormContext.rules + required rules
   const allRules = computed(() => {
-    const rules: FormItemRule[] = props.rules ? castArray(props.rules) : [];
+    const rules: FormItemRule[] = props.rules ? _.castArray(props.rules) : [];
 
     const formRules = formContext?.rules?.value;
     if (formRules && props.prop) {
-      const _rules = get(formRules, props.prop);
+      const _rules = _.get(formRules, props.prop);
 
       if (_rules) {
-        rules.push(...castArray(_rules));
+        rules.push(..._.castArray(_rules));
       }
     }
 
@@ -159,10 +160,10 @@
   const resetField: FormItemContext['resetField'] = async () => {
     const model = formContext?.model?.value;
     if (!model || !props.prop) return;
-    const fieldValue = get(model, props.prop);
+    const fieldValue = _.get(model, props.prop);
 
-    if (!isEqual(fieldValue, initialValues)) {
-      set(model, props.prop, cloneDeep(initialValues));
+    if (!_.isEqual(fieldValue, initialValues)) {
+      _.set(model, props.prop, _.cloneDeep(initialValues));
     }
 
     await nextTick();
@@ -173,7 +174,7 @@
   onMounted(() => {
     if (props.prop) {
       formContext?.addField(context);
-      initialValues = cloneDeep(fieldValue.value);
+      initialValues = _.cloneDeep(fieldValue.value);
     }
   });
 

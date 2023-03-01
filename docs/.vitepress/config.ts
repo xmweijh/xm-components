@@ -6,6 +6,7 @@ import { sidebar } from './config/navigation';
 import nav from './navigation/nav.json';
 
 const config: UserConfig = {
+  base: '/xm-components/',
   lang: 'zh-CN',
   title: 'xm-components-lib',
   description: 'Just playing around.',

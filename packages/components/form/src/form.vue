@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { computed, provide, toRefs } from 'vue';
-  import { castArray, isEqual } from 'lodash';
+  import _ from 'lodash';
+  // import { _.castArray, _.isEqual } from 'lodash';
   import type { ValidateFieldsError } from 'async-validator';
   import { createNamespace } from '../../../utils';
   import { formContextKey } from './context';
@@ -43,10 +44,11 @@
   const getFieldsByProps = (props: FormItemProp): FormItemContext[] => {
     if (fields.length === 0) return [];
 
-    const propsArr = castArray(props);
+    const propsArr = _.castArray(props);
     return propsArr.length
       ? fields.filter(
-          (field) => field.prop?.value && propsArr.some((prop) => isEqual(field.prop?.value, prop)),
+          (field) =>
+            field.prop?.value && propsArr.some((prop) => _.isEqual(field.prop?.value, prop)),
         )
       : fields;
   };

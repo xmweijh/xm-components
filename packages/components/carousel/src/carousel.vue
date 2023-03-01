@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { reactive, onMounted, onBeforeUnmount } from 'vue';
-  import { throttle } from 'lodash';
+  // import { _.throttle } from 'lodash';
+  import _ from 'lodash';
   import { ICarouselProps } from './carousel';
   import Dot from './dot.vue';
   import Director from './director.vue';
@@ -41,11 +42,11 @@
     }
   };
 
-  const dotClick = throttle((index) => {
+  const dotClick = _.throttle((index) => {
     state.currentIndex = index;
   }, 800);
 
-  const dirClick = throttle((dir) => {
+  const dirClick = _.throttle((dir) => {
     setIndex(dir);
   }, 800);
 

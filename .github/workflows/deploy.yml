@@ -3,13 +3,20 @@ on:
   workflow_dispatch: {}
   push:
     branches:
-      - main
+      - dev
+    paths-ignore:
+      - README.md
+      - LICENSE
+      - CHANGELOG.md
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
+    strategy:
+      matrix:
+        node-version: [16.x]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
