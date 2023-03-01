@@ -17,31 +17,6 @@
   width: 200px;
   display: inline-block;
 
-  table {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 0;
-    line-height: 1.5;
-    margin: 0;
-    width: 100%;
-  }
-  tr {
-    border: none;
-    transition: none;
-
-    &:nth-child(2n) {
-      background-color: inherit;
-    }
-  }
-  th,
-  td {
-    text-align: center;
-    border: none;
-    padding: 8px 12px;
-    background-color: #fff;
-    font-size: 1em;
-  }
-
   &__inner {
     width: 100%;
     height: auto;
@@ -97,6 +72,31 @@
           width: 100%;
           height: auto;
           overflow: hidden;
+
+          table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 0;
+            line-height: 1.5;
+            margin: 0;
+            width: 100%;
+          }
+          tr {
+            border: none;
+            transition: none;
+
+            &:nth-child(2n) {
+              background-color: inherit;
+            }
+          }
+          th,
+          td {
+            text-align: center;
+            border: none;
+            padding: 8px 12px;
+            background-color: #fff;
+            font-size: 1em;
+          }
         }
       }
     }
