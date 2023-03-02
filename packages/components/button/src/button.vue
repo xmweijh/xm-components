@@ -51,6 +51,7 @@
     ]"
     :style="{ color: textColor, ...style }"
     :disabled="disabled"
+    :type="nativeType"
   >
     <IIcon v-if="!!icon && !loading" :name="icon" class="icon" />
     <IIcon v-if="loading" name="loading" class="icon is-loading" />

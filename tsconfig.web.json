@@ -8,6 +8,6 @@
     "typeRoots": ["./node_modules", "./typings"],
     "skipLibCheck": true
   },
-  "include": ["packages", "typings/vue-shim.d.ts"],
+  "include": ["packages", "./typings/vue-shim.d.ts"],
   "exclude": ["node_modules", "dist", "*.js", "lib", "build"]
 }

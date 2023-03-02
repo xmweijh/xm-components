@@ -23,6 +23,14 @@ import {
   IWeather,
   ICard,
   ITable,
+  IForm,
+  IFormItem,
+  IMagnifier,
+  ITransfer,
+  ICssdemo,
+  ICarousel,
+  ICol,
+  IRow,
 } from './components';
 export * from './components';
 
@@ -41,6 +49,14 @@ const components = {
   IWeather,
   ICard,
   ITable,
+  IForm,
+  IFormItem,
+  IMagnifier,
+  ITransfer,
+  ICssdemo,
+  ICarousel,
+  ICol,
+  IRow,
 };
 /**
  * 组件注册

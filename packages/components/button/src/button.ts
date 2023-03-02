@@ -27,5 +27,10 @@ export const ButtonProps = {
   },
   textColor: {
     type: String,
+    default: 'button',
+  },
+  nativeType: {
+    type: String as PropType<'button' | 'submit' | 'reset'>,
+    default: 'button',
   },
 };

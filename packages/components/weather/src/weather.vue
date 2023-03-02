@@ -6,6 +6,7 @@
   import IButton from '../../button';
   import IDialog from '../../dialog';
   import IInput from '../../input';
+  import IIcon from '../../icon';
   import cityNameJson from './city.json';
   //组件接收的值类型
   interface IweatherProps {
@@ -13,6 +14,10 @@
     secret?: string | number;
     width?: string | number;
     background?: string | number;
+    icon?: boolean;
+    simple?: boolean;
+    basic?: boolean;
+    city?: string;
   }
   //withDefaults可以为props添加默认值等
   const weatherProps = withDefaults(defineProps<IweatherProps>(), {
@@ -20,6 +25,10 @@
     secret: 'jYec64Sn',
     width: '300px',
     background: '#eee',
+    icon: false,
+    simple: false,
+    basic: false,
+    city: '北京',
   });
   // 天气接口返回的数据类型
   // type WetherApi = {
@@ -123,8 +132,20 @@
       alert('请输入正确的城市名');
     }
   };
+
+  // 根据传入的城市查询Id
+  const defaultCity = () => {
+    if (weatherProps.city !== null && weatherProps.city !== undefined) {
+      console.log('111111111');
+      filterCity(weatherProps.city);
+    } else {
+      getCityWeatherFn(101120101);
+    }
+  };
+
   onMounted(() => {
-    getCityWeatherFn(101120101);
+    // 先查询是否传入city,设置默认城市
+    defaultCity();
     // 监听键盘的enter
     document.addEventListener('keyup', (e) => {
       if (e.code == 'Enter') {
@@ -140,15 +161,20 @@
 
 <template>
   <div>
-    <div class="weatherBase" :style="baseStyle">
+    <div v-if="weatherProps.basic" class="weatherBase" :style="baseStyle">
       <div class="leftContent">
         <div class="area">
           <div>{{ weathObj.data.city }}</div>
           <IButton type="primary" size="mini" round @click="showSwitchCity()">切换</IButton>
         </div>
         <div class="tem">
-          <div class="temText">{{ weathObj.data.tem }}</div>
-          <div class="">°</div>
+          <div v-if="weatherProps.icon" class="iconWea" style="margin-left: -10px">
+            <IIcon :name="weathObj.data.wea_img" size="65px" />
+          </div>
+          <div class="temText">
+            <div>{{ weathObj.data.tem }}</div>
+            <div>°</div>
+          </div>
         </div>
       </div>
       <div class="rightContent">
@@ -172,6 +198,16 @@
           </span>
         </template>
       </IDialog>
+    </div>
+    <div v-if="weatherProps.simple" class="simpleWea">
+      <div class="city">{{ weathObj.data.city }}</div>
+      <div v-if="weatherProps.icon" class="iconWea" style="margin-left: 10px">
+        <IIcon :name="weathObj.data.wea_img" size="40px" />
+      </div>
+      <div class="temText">
+        <div>{{ weathObj.data.tem }}</div>
+        <div>°</div>
+      </div>
     </div>
   </div>
 </template>

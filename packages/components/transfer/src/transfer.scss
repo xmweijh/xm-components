@@ -1,0 +1,12 @@
+.transfer {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  height: 300px;
+  border: 1px solid #ddd;
+
+  .box {
+    width: 120px;
+    height: 100%;
+  }
+}

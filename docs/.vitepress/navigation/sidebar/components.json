@@ -17,6 +17,10 @@
       "text": "布局组件",
       "items": [
         {
+          "text": "Layout 布局",
+          "link": "layout"
+        },
+        {
           "text": "Card 卡片",
           "link": "card"
         }
@@ -25,6 +29,10 @@
     {
       "text": "表单组件",
       "items": [
+        {
+          "text": "Form 表单",
+          "link": "form"
+        },
         {
           "text": "Checkbox 多选框",
           "link": "checkbox"
@@ -48,6 +56,10 @@
         {
           "text": "Table 表格",
           "link": "table"
+        },
+        {
+          "text": "Transfer 穿梭框",
+          "link": "transfer"
         }
       ]
     },
@@ -69,11 +81,28 @@
       ]
     },
     {
+      "text": "Data 数据展示",
+      "items": [
+        {
+          "text": "Carousel 走马灯",
+          "link": "carousel"
+        }
+      ]
+    },
+    {
       "text": "功能组件",
       "items": [
         {
           "text": "Weather 天气",
           "link": "weather"
+        },
+        {
+          "text": "放大镜",
+          "link": "magnifier"
+        },
+        {
+          "text": "随手记录的CSSDemo",
+          "link": "cssdemo"
         }
       ]
     }

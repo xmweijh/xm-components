@@ -4,7 +4,7 @@
   <I-card shadow="never" class="box-card"> 无阴影 </I-card>
 </template>
 
-<style>
+<style scoped>
   .box-card {
     width: 320px;
     margin-bottom: 20px;

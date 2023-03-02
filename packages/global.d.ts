@@ -15,6 +15,14 @@ declare module '@vue/runtime-core' {
     IWeather: typeof import('xm-components')['IWeather'];
     ICard: typeof import('xm-components')['ICard'];
     ITable: typeof import('xm-components')['ITable'];
+    ICssdemo: typeof import('xm-components')['ICssdemo'];
+    IForm: typeof import('xm-components')['IForm'];
+    IFormItem: typeof import('xm-components')['IFormItem'];
+    IMagnifier: typeof import('xm-components')['IMagnifier'];
+    ITransfer: typeof import('xm-components')['ITransfer'];
+    ICarousel: typeof import('xm-components')['ICarousel'];
+    ICol: typeof import('xm-components')['ICol'];
+    Irow: typeof import('xm-components')['Irow'];
   }
 }
 declare global {

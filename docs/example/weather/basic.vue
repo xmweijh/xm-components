@@ -1,3 +1,3 @@
 <template>
-  <I-weather></I-weather>
+  <I-weather basic></I-weather>
 </template>

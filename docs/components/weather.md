@@ -18,6 +18,23 @@ weather/basic
 
 :::
 
+## 带图标用法
+
+:::demo 
+
+weather/iconweather
+
+:::
+
+## 简单用法
+
+:::demo 
+
+weather/simpleWea
+
+:::
+
+
 
 
 ## 图表属性
@@ -27,3 +44,4 @@ weather/basic
 | secret  | 用户密钥 | string                   | -      | -  |
 | width  | 卡片宽度 | string                   | -      | -  |
 | background  | 卡片背景 | string                   | -      | -  |
+| icon  | 图标  | string                   | -      | -  |
