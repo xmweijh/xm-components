@@ -17,6 +17,10 @@
       "text": "布局组件",
       "items": [
         {
+          "text": "Layout 布局",
+          "link": "layout"
+        },
+        {
           "text": "Card 卡片",
           "link": "card"
         }

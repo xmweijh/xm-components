@@ -40,8 +40,10 @@ COM_NAME=$HANDLE_NAME
 # 生成文件.vue 并写入模板
 cat > $FILENAME/src/${NAME}.vue <<EOF
 <script lang="ts" setup>
+  import { createNamespace } from '../../../utils';
   import { ${COM_NAME}Props } from './${NAME}';
   defineProps(${COM_NAME}Props);
+  const { createBEM } = createNamespace('${NAME}');
   defineOptions({
     name: '${PREFIX_NAME}${COM_NAME}',
   });
@@ -49,7 +51,9 @@ cat > $FILENAME/src/${NAME}.vue <<EOF
 <template>
   <div> ${PREFIX_NAME}${COM_NAME} components </div>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+   @import './${NAME}.scss';
+</style>
 EOF
 
 # 生成文件.scss
@@ -96,7 +100,18 @@ DOCS_FILE_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")/../docs/components" && pwd)
 cat <<EOF >"$DOCS_FILE_PATH/${NAME}.md"
 # ${NAME} 文档
 
-:::docs ${PREFIX_NAME}${NAME}组件
+## 安装
+```javascript
+import { createApp } from 'vue';
+import { ${PREFIX_NAME}${NAME} } from 'xm-components';
+
+const app = createApp();
+app.use(${PREFIX_NAME}${NAME});
+```
+
+## 基础用法
+${COM_NAME}组件的基本用法
+:::demo 
 
 ${NAME}/basic
 

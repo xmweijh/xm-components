@@ -15,3 +15,4 @@ export * from './magnifier';
 export * from './transfer';
 export * from './cssdemo';
 export * from './carousel';
+export * from './layout';

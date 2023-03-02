@@ -20,6 +20,7 @@ declare module '@vue/runtime-core' {
     IMagnifier: typeof import('xm-components')['IMagnifier'];
     ITransfer: typeof import('xm-components')['ITransfer'];
     ICarousel: typeof import('xm-components')['ICarousel'];
+    ILayout: typeof import('xm-components')['ILayout'];
   }
 }
 declare global {

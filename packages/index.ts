@@ -28,6 +28,7 @@ import {
   ITransfer,
   ICssdemo,
   ICarousel,
+  ILayout,
 } from './components';
 export * from './components';
 
@@ -51,6 +52,7 @@ const components = {
   ITransfer,
   ICssdemo,
   ICarousel,
+  ILayout,
 };
 /**
  * 组件注册
