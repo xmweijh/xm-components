@@ -10,3 +10,4 @@ export * from './switch';
 export * from './pagination';
 export * from './weather';
 export * from './card';
+export * from './table';

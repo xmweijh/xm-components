@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
   import { reactive } from 'vue';
   const state = reactive({
     options: {
@@ -45,12 +45,5 @@
 </script>
 
 <template>
-  <I-table :options="options">
-    <template #head-job>
-      <div style="color: #000">123</div>
-    </template>
-    <template #id="item">
-      <div style="color: #ff0000">{{ item.scope.row.id }}</div>
-    </template>
-  </I-table>
+  <I-table :options="options"></I-table>
 </template>

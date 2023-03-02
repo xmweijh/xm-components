@@ -40,17 +40,18 @@
         },
       ],
     },
+    headStyle: {
+      color: '#fff',
+      borderColor: '#4c94d1',
+      backgroundColor: 'rgba(25,66,120,.9)',
+    },
+    rowStyle: {
+      borderColor: '#4c94d1',
+    },
   });
-  const { options } = state;
+  const { options, headStyle, rowStyle } = state;
 </script>
 
 <template>
-  <I-table :options="options">
-    <template #head-job>
-      <div style="color: #000">123</div>
-    </template>
-    <template #id="item">
-      <div style="color: #ff0000">{{ item.scope.row.id }}</div>
-    </template>
-  </I-table>
+  <I-table :options="options" :head-style="headStyle" :row-style="rowStyle" size="mini"></I-table>
 </template>

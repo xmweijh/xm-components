@@ -45,12 +45,8 @@
 </script>
 
 <template>
-  <I-table :options="options">
-    <template #head-job>
-      <div style="color: #000">123</div>
-    </template>
-    <template #id="item">
-      <div style="color: #ff0000">{{ item.scope.row.id }}</div>
-    </template>
-  </I-table>
+  <P>小的</P>
+  <I-table :options="options" size="small"></I-table>
+  <p>更小的</p>
+  <I-table :options="options" size="mini"></I-table>
 </template>

@@ -1,0 +1,181 @@
+.i-table-default {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    table {
+      width: 100%;
+      border-radius: 2px;
+      box-sizing: border-box;
+      border-spacing: 0;
+      thead {
+        th {
+          padding: 14px 12px;
+          box-sizing: border-box;
+          color: #646468;
+          text-align: left;
+          line-height: 20px;
+          font-size: 14px;
+          font-weight: 550;
+          border: 1px solid #f0f0f0;
+          border-right: 0;
+          background: #f0f0f0;
+        }
+        th:last-child {
+          border-right: 1px solid #f0f0f0;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 14px 12px;
+            border-radius: 2px;
+            box-sizing: border-box;
+            text-align: left;
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #505050;
+            border: 1px solid #f0f0f0;
+            border-right: 0;
+            border-top: 0;
+          }
+          td:last-child {
+            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+          }
+          &:hover {
+            background: rgba(240, 240, 240, 0.2);
+          }
+        }
+        tr:last-child {
+          td {
+          }
+        }
+      }
+    }
+  }
+  .i-table-small {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    table {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border-spacing: 0;
+      thead {
+        th {
+          padding: 10px 10px;
+          box-sizing: border-box;
+          text-align: left;
+          line-height: 20px;
+          font-size: 14px;
+          font-weight: 550;
+          color: #646468;
+          border: 1px solid #f0f0f0;
+          border-right: 0;
+          background: #f0f0f0;
+        }
+        th:last-child {
+          border-right: 1px solid #f0f0f0;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 9.5px 10px;
+            box-sizing: border-box;
+            text-align: left;
+            line-height: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid #f0f0f0;
+            border-top: 0;
+            border-right: 0;
+          }
+          td:last-child {
+            border-bottom: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+          }
+          &:hover {
+            background: rgba(240, 240, 240, 0.2);
+          }
+        }
+        tr:last-child {
+          td {
+          }
+        }
+      }
+    }
+  }
+  .i-table-mini {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    table {
+      width: 100%;
+      border-radius: 2px;
+      // border:1px solid #f0f0f0;
+      box-sizing: border-box;
+      border-spacing: 0;
+      thead {
+        th {
+          padding: 8px 10px;
+          box-sizing: border-box;
+          text-align: left;
+          line-height: 18px;
+          color: #646468;
+          font-weight: 550;
+          font-size: 12px;
+          border: 1px solid #f0f0f0;
+          border-right: 0;
+          background-color: #fafafa;
+        }
+        th:last-child {
+          border-right: 1px solid #f0f0f0;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 7.5px 10px;
+            box-sizing: border-box;
+            text-align: left;
+            line-height: 18px;
+            color: #505050;
+            font-weight: 500;
+            font-size: 12px;
+            border: 1px solid #f0f0f0;
+            border-right: 0;
+            border-top: 0;
+          }
+          td:last-child {
+            border-bottom: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+          }
+          &:hover {
+            background: rgba(240, 240, 240, 0.2);
+          }
+        }
+        tr:last-child {
+          td {
+            // border-bottom:0;
+          }
+        }
+      }
+    }
+  }
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+  }

@@ -22,6 +22,7 @@ import {
   IPagination,
   IWeather,
   ICard,
+  ITable,
 } from './components';
 export * from './components';
 
@@ -39,6 +40,7 @@ const components = {
   IPagination,
   IWeather,
   ICard,
+  ITable,
 };
 /**
  * 组件注册
