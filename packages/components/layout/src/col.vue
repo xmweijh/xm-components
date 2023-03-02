@@ -1,8 +1,8 @@
 <script lang="ts" setup>
   import { computed } from 'vue';
   import { createNamespace } from '../../../utils';
-  import { LayoutProps } from './layout';
-  const props = defineProps(LayoutProps);
+  import { ColProps } from './col';
+  const props = defineProps(ColProps);
 
   const width = computed(() =>
     props.span <= 24 ? (props.span % 1 == 0 ? (100 / 24) * props.span + '%' : '') : '',
@@ -12,9 +12,9 @@
     props.offset <= 24 ? (props.offset % 1 == 0 ? (100 / 24) * props.offset + '%' : '') : '',
   );
 
-  const { createBEM } = createNamespace('layout');
+  const { createBEM } = createNamespace('col');
   defineOptions({
-    name: 'ILayout',
+    name: 'ICol',
   });
 </script>
 
@@ -25,9 +25,9 @@
 </template>
 
 <style lang="scss" scoped>
-  .I-layout {
-    --I-layout--width: v-bind(width);
-    --I-layout--offset: v-bind(offset);
+  .I-col {
+    --I-col--width: v-bind(width);
+    --I-col--offset: v-bind(offset);
   }
-  @import './layout.scss';
+  @import './col.scss';
 </style>

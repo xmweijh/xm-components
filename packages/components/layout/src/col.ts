@@ -1,4 +1,4 @@
-export const LayoutProps = {
+export const ColProps = {
   span: {
     type: Number,
     default: 24,
