@@ -52,6 +52,19 @@ cat > $FILENAME/src/${NAME}.vue <<EOF
 <style lang="scss" scoped></style>
 EOF
 
+# 生成文件.scss
+cat > $FILENAME/src/${NAME}.scss <<EOF
+@import '../../../theme-default/var.scss';
+EOF
+
+# 生成文件.ts
+cat > $FILENAME/src/${NAME}.ts <<EOF
+export const ${COM_NAME}Props = {
+
+}
+EOF
+
+
 
 # 生成导入模板文件 index.ts
 cat <<EOF >"$FILENAME/index.ts"
