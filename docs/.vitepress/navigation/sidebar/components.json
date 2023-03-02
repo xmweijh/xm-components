@@ -54,6 +54,10 @@
           "link": "date"
         },
         {
+          "text": "Table 表格",
+          "link": "table"
+        },
+        {
           "text": "Transfer 穿梭框",
           "link": "transfer"
         }
