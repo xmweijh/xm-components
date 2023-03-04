@@ -46,7 +46,7 @@
           "link": "switch"
         },
         {
-          "text": "Pagination",
+          "text": "Pagination 分页",
           "link": "pagination"
         },
         {
@@ -77,6 +77,10 @@
         {
           "text": "Tooltip 提示",
           "link": "tooltip"
+        },
+        {
+          "text": "Optfile 文件选择",
+          "link": "optfile"
         }
       ]
     },

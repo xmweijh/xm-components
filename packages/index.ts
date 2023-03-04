@@ -31,6 +31,7 @@ import {
   ICarousel,
   ICol,
   IRow,
+  IOptfile,
 } from './components';
 export * from './components';
 
@@ -57,6 +58,7 @@ const components = {
   ICarousel,
   ICol,
   IRow,
+  IOptfile,
 };
 /**
  * 组件注册

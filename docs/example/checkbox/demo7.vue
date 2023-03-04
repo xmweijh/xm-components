@@ -13,8 +13,8 @@
 </script>
 
 <template>
-  <m-space :inline="false">
+  <div :inline="false">
     <I-checkbox v-model="checkboxVal" :options="checkOptions" custom-color="#09b63d"></I-checkbox>
     <I-checkbox v-model="checkboxVal" :options="checkOptions" custom-color="#25B0F8"></I-checkbox>
-  </m-space>
+  </div>
 </template>

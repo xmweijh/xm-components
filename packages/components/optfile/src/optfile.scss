@@ -1,0 +1,191 @@
+.i-optfile-default {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    .i-preview-img-box {
+      width: auto;
+      height: auto;
+      overflow: hidden;
+      .i-preview-img-img {
+        width: 130px;
+        height: 130px;
+        float: left;
+        margin: 0 4px;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: 10px;
+        // 图片容器以及其交互效果
+        .i-preview-img-actions {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          /**
+        容器内的图像元素的样式。图像元素会填充父容器的宽度，
+        而高度将按比例缩放以适应容器的高度。object-fit: 
+        scale-down属性可确保图像保持原始宽高比，并缩放以适应父容器。 */
+          img {
+            width: 100%;
+            object-fit: scale-down;
+          }
+          /**
+        具有100%宽度和高度的子元素容器，并设置为绝对定位以允许它覆盖图像元素。
+        使用overflow:hidden以确保任何子元素不会溢出。使用display:none属性，子元素容器默认情况下将不可见。 */
+          .customArea {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.4s;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //  子元素默认情况下不可见
+            display: none;
+            i-icon {
+              font-size: 18px;
+            }
+            //  鼠标悬停的时候，背景颜色为半透明的黑色
+            &:hover {
+              background: rgba(0, 0, 0, 0.6);
+            }
+          }
+          // 鼠标悬停，子元素容器设置可见
+          &:hover {
+            .customArea {
+              display: flex;
+            }
+          }
+        }
+      }
+      .i-optfile-area {
+        width: 130px;
+        height: 130px;
+        border: 1px dashed #d9d9d9;
+        border-radius: 2px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: all 0.4s;
+        float: left;
+        &:hover {
+          transition: all 0.4s;
+          border-color: #0e80eb;
+        }
+        .i-optfile-area-text {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          justify-content: center;
+          align-items: center;
+          color: #606255;
+          font-size: 14px;
+          text-align: center;
+          position: relative;
+          .i-optfile-text-pos {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%);
+            .icon-file {
+              font-size: 22px;
+            }
+            p {
+              width: 100%;
+              margin: 0;
+              text-align: center;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      .i-optfie-area-big {
+        width: 300px;
+        height: 130px;
+        .i-optfile-area-text {
+          .i-optfile-text-pos {
+            .icon-file {
+              font-size: 28px;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+      .i-opfile-area-active {
+        transition: all 0.4s;
+        border-color: #0e80eb;
+      }
+    }
+    .i-optfile-filelist {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      margin-top: 2px;
+      ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        padding: 5px 0;
+        box-sizing: border-box;
+        li {
+          list-style: none;
+          line-height: 28px;
+          padding: 0 10px 0 5px;
+          box-sizing: border-box;
+          font-size: 14px;
+          color: #606255;
+          cursor: pointer;
+          &:hover {
+            background: rgba(167, 164, 164, 0.1);
+            .i-delete {
+              display: inline-block;
+            }
+          }
+          div {
+            span {
+              display: inline-block;
+              width: 96%;
+            }
+            .file-icon {
+              margin-right: 4px;
+            }
+            .i-delete {
+              float: right;
+              cursor: pointer;
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.5s ease;
+  }
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+  }
+  // 设置<TransitionGroup>的动画效果，
+  .list-img-enter-active,
+  .list-img-leave-active {
+    transition: all 1s ease;
+  }
+  // 定了元素在进入或离开过渡开始时的初始状态。在这种情况下，元素的不透明度设置为0，表示它们是完全透明的，因此它们将从无到有地淡入淡出。
+  .list-img-enter-from,
+  .list-img-leave-to {
+    opacity: 0;
+  }

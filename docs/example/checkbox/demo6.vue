@@ -13,9 +13,9 @@
 </script>
 
 <template>
-  <m-space :inline="false">
+  <div :inline="false">
     <I-checkbox v-model="checkboxVal" :options="checkOptions"></I-checkbox>
     <I-checkbox v-model="checkboxVal" :options="checkOptions" size="small"></I-checkbox>
     <I-checkbox v-model="checkboxVal" :options="checkOptions" size="mini"></I-checkbox>
-  </m-space>
+  </div>
 </template>

@@ -45,7 +45,7 @@
 </script>
 
 <template>
-  <P>小的</P>
+  <p>小的</p>
   <I-table :options="options" size="small"></I-table>
   <p>更小的</p>
   <I-table :options="options" size="mini"></I-table>
