@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     ICarousel: typeof import('xm-components')['ICarousel'];
     ICol: typeof import('xm-components')['ICol'];
     Irow: typeof import('xm-components')['Irow'];
+    IOptfile: typeof import('xm-components')['IOptfile'];
   }
 }
 declare global {

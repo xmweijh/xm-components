@@ -17,3 +17,4 @@ export * from './transfer';
 export * from './cssdemo';
 export * from './carousel';
 export * from './layout';
+export * from './optfile';
