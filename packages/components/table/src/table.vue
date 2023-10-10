@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div :class="[`i-table-${size}`, customClass]">
+  <div :class="[`i-table-${props.size}`, customClass]">
     <table>
       <!-- 头部 -->
       <thead v-if="showHeader">
@@ -23,7 +23,7 @@
       <tbody>
         <tr v-for="(v, i) in options.datas" :key="i">
           <td
-            v-for="(m, j) in options.rests"
+            v-for="(_, j) in options.rests"
             :key="j"
             :style="[
               rowStyle,

@@ -3,6 +3,7 @@
   import { createNamespace } from '../../../utils';
   import IInput from '../../input';
   import IIcon from '../../icon';
+  import type { Day, Month } from './date';
   import { DateProps } from './date';
 
   const props = defineProps(DateProps);
@@ -13,11 +14,11 @@
   const disEndDate = ref(new Date(props.endDate + ' 00:00:00').getTime());
   const dateVal = ref<string | number | undefined>(props.modelValue);
   const show = ref<boolean>(false);
-  const daysList = ref<Date[]>([]);
+  const daysList = ref<Day[]>([]);
   const placeholders = ref<string>(props.placeholder || '');
   const dateShow = ref<boolean>(true);
   const yearList = ref<number[]>([]);
-  const monthList = ref<number[]>([]);
+  const monthList = ref<Month[]>([]);
   const monthShow = ref<boolean>(false);
   const color = ref<string>(props.customActiveColor);
 
@@ -54,7 +55,7 @@
 
   // 定义了一个 IIFE，用于封装一个 Date 对象。
   const dateObj = (function () {
-    let _date = dateVal.value === '' ? new Date() : new Date(dateVal.value);
+    let _date = dateVal.value === '' ? new Date() : new Date(dateVal.value as any);
     return {
       getDate: function () {
         return _date;
@@ -76,7 +77,7 @@
         month: new Date(year, month, i).getMonth() + 1,
         day: new Date(year, month, i).getDate(),
       };
-      daysList.value.push(day);
+      daysList.value.push(day as any);
     }
   };
 
@@ -171,9 +172,9 @@
 
   const vClickOutside = {
     // 在元素挂载前执行的生命周期钩子函数
-    beforeMount(el) {
+    beforeMount(el: any) {
       // 定义一个函数，处理点击事件
-      const handler = (e) => {
+      const handler = (e: any) => {
         // 因为svg是对象类型没有indexOf方法 所以先转为字符串
         const tClassName = String(e.target.className);
         if (!props.disabled) {
@@ -240,7 +241,7 @@
         document.addEventListener('click', handler);
       }
     },
-    unmounted(el) {
+    unmounted(el: any) {
       if (typeof document !== 'undefined') {
         document.removeEventListener('click', el.handler);
       }
@@ -248,7 +249,7 @@
   };
 
   // 定义组件选中日期的方法
-  const selectDate = (item) => {
+  const selectDate = (item: any) => {
     // 校验选中的日期是否在允许范围内
     if (item.time >= disStartDate.value && item.time <= disEndDate.value) {
       // 根据选中日期的月份调整月份
@@ -274,7 +275,11 @@
   const getYearList = (): number[] => {
     let list: number[] = [];
     for (let i = 0; i < 10; i++) {
-      list.push(new Date(selDate.value.year) - parseInt(new Date(selDate.value.year) % 10) + i);
+      list.push(
+        (new Date(selDate.value.year) as any) -
+          parseInt(((new Date(selDate.value.year) as any) % 10) as any) +
+          i,
+      );
     }
     return list;
   };
@@ -337,7 +342,7 @@
     }
   };
   // 当月份选择器选择月份时执行的函数
-  const dateMonthSel = (item) => {
+  const dateMonthSel = (item: any) => {
     if (props.type == 'month') {
       // 如果props的type属性是'month'
       dateVal.value = new Date(selDate.value.year + '-' + item.m1).format('yyyy-MM');
@@ -384,7 +389,7 @@
     getDays(
       dateObj.getDate().getFullYear(),
       dateObj.getDate().getMonth(),
-      2 - getWeek(new Date(date.getFullYear(), date.getMonth(), 1)),
+      2 - getWeek(new Date(date.getFullYear(), date.getMonth(), 1) as any),
     );
     dateVal.value = dateObj.getDate().format(props.format);
     emit('update:modelValue', dateVal.value);
@@ -395,7 +400,7 @@
   onMounted(() => {
     monthList.value = [];
     for (let i = 0; i < 12; i++) {
-      monthList.value.push({ m: i + 1 + '月', m1: i + 1 });
+      monthList.value.push({ m: i + 1 + '月', m1: i + 1 } as any);
     }
     if (props.type == 'year') {
       dateShow.value = false;

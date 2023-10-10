@@ -2,9 +2,9 @@
 
 <template>
   <ICssdemo
-    textSmearing_fontsize="30px"
-    textSmearing_color="black"
-    textSmearing_time="8s"
-    textSmearing_text="HTML CSS Typescript"
+    text-smearing-fontsize="30px"
+    text-smearing-color="black"
+    text-smearing-time="8s"
+    text-smearing-text="HTML CSS Typescript"
   ></ICssdemo>
 </template>

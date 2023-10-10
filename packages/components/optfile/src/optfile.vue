@@ -22,11 +22,11 @@
     console.log(refInp);
     refInp.value?.click();
   };
-  const textchange = (e: { target: { files: FileList } }) => {
+  const textchange = (e: any) => {
     File.unshift(...e.target.files);
     FileList.unshift(...e.target.files);
-    File.forEach((item, index) => {
-      item.preImgUrl = windowURL.createObjectURL(item);
+    File.forEach((item) => {
+      item.preImgUrl = windowURL && windowURL.createObjectURL(item as any);
       emit('change', File), emit('update:fileList', File);
     });
   };
@@ -38,13 +38,13 @@
   onMounted(() => {
     if (props.drop && props.targetType == 'box') {
       let dropArea = refDiv.value;
-      dropArea?.addEventListener('drop', (e) => {
+      dropArea?.addEventListener('drop', (e: any) => {
         e.stopPropagation();
         e.preventDefault();
         File.unshift(...e.dataTransfer.files);
         FileList.unshift(...e.dataTransfer.files);
-        File.forEach((item, index) => {
-          item.preImgUrl = windowURL.createObjectURL(item);
+        File.forEach((item) => {
+          item.preImgUrl = windowURL && windowURL.createObjectURL(item as any);
         });
         emit('change', File);
         emit('update:fileList', File);

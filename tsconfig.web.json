@@ -9,5 +9,5 @@
     "skipLibCheck": true
   },
   "include": ["packages", "./typings/vue-shim.d.ts"],
-  "exclude": ["node_modules", "dist", "*.js", "lib", "build"]
+  "exclude": ["node_modules", "dist", "*.js", "lib", "build", "script"]
 }

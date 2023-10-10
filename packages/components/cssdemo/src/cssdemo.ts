@@ -1,17 +1,17 @@
 export const ICssDemoprops = {
-  textSmearing_fontsize: {
+  textSmearingFontsize: {
     type: String,
     default: '80px',
   },
-  textSmearing_color: {
+  textSmearingColor: {
     type: String,
     default: 'black',
   },
-  textSmearing_time: {
+  textSmearingTime: {
     type: String,
     default: '8s',
   },
-  textSmearing_text: {
+  textSmearingText: {
     type: String,
     default: 'HTML CSS Typescript',
   },

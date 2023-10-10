@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
-import xmCom from '@packages/index';
-import '@packages/theme-default/index.scss';
+// import xmCom from '@packages/index';
+import xmCom from '../../dist/xm-components/es';
+// import '../../dist/xm-components/style.css';
+// import '@packages/theme-default/index.scss';
 
 import App from './App.vue';
 

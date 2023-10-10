@@ -9,6 +9,10 @@
     size: '',
     clearable: false,
     showPassword: false,
+    prefixIcon: '',
+    suffixIcon: '',
+    autosize: undefined,
+    icon: '',
   });
   const inputEmits = defineEmits<InputEmits>();
   //组件命名
@@ -100,7 +104,7 @@
   const textareaStyle = ref<any>();
 
   const textarea = shallowRef<HTMLTextAreaElement>();
-  const isObject = (val) => val !== null && typeof val === 'object';
+  const isObject = (val: any) => val !== null && typeof val === 'object';
 
   watch(
     () => inputProps.modelValue,

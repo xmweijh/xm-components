@@ -9,7 +9,7 @@ export default defineConfig({
     DefineOptions({
       plugins: {
         vue: vue({
-          reactivityTransform: true,
+          // reactivityTransform: true,
         }),
       },
     }),

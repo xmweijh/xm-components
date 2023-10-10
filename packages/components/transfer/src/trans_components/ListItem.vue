@@ -6,7 +6,8 @@
     },
     leftOrRight: {
       type: String,
-      validator(value) {
+      default: () => '',
+      validator(value: string) {
         return ['left', 'right'].includes(value);
       },
     },
@@ -14,18 +15,18 @@
 
   const emit = defineEmits(['checkboxClick', 'dragItem']);
 
-  const checkboxClick = (checked, LeftOrRight, item) => {
+  const checkboxClick = (checked: boolean, LeftOrRight: any, item: any) => {
     emit('checkboxClick', checked, LeftOrRight, item);
   };
 
-  const dragItem = (item) => {
+  const dragItem = (item: any) => {
     emit('dragItem', item);
   };
 </script>
 
 <template>
   <div
-    v-for="item of props.data"
+    v-for="item of (props.data as any[])"
     :key="item.id"
     :class="['list-item', item.disabled ? 'disabled' : '']"
     :draggable="!item.disabled"
@@ -35,7 +36,7 @@
       :id="'__checkbox__' + item.id"
       type="checkbox"
       :disabled="item.disabled"
-      @click="checkboxClick($event.target.checked, props.leftOrRight, item)"
+      @click="checkboxClick(($event.target as HTMLInputElement).checked, props.leftOrRight, item)"
     />
     <label :for="'__checkbox__' + item.id">{{ item.phone_name }}</label>
   </div>

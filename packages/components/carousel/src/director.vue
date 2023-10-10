@@ -2,10 +2,14 @@
   export default {
     name: 'Director',
     props: {
-      dir: String,
+      dir: {
+        type: String,
+        default: '',
+      },
     },
-    setup(props, ctx) {
-      const dirClick = (dir) => {
+    emits: ['dirClick'],
+    setup(_, ctx) {
+      const dirClick = (dir: string) => {
         ctx.emit('dirClick', dir);
       };
 

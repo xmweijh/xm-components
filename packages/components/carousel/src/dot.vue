@@ -2,8 +2,14 @@
   export default {
     name: 'CarDot',
     props: {
-      itemLen: Number,
-      currentIndex: Number,
+      itemLen: {
+        type: Number,
+        default: 0,
+      },
+      currentIndex: {
+        type: Number,
+        default: 0,
+      },
       hasDot: {
         type: Boolean,
         default: true,
@@ -13,8 +19,9 @@
         default: '#ff5000',
       },
     },
-    setup(props, ctx) {
-      const dotClick = (index) => {
+    emits: ['dotClick'],
+    setup(_, ctx) {
+      const dotClick = (index: number) => {
         ctx.emit('dotClick', index);
       };
 

@@ -34,3 +34,16 @@ export const DateProps = {
   },
   form: String,
 };
+
+export interface Day {
+  dates: string;
+  time: number;
+  year: number;
+  month: number;
+  day: number;
+}
+
+export interface Month {
+  m: string;
+  m1: number;
+}

@@ -13,7 +13,7 @@
     itemLen: carouselProps.options.length,
   });
 
-  let t = null;
+  let t: any = null;
 
   //自动轮播
   const autoPlay = () => {
@@ -86,10 +86,10 @@
         :has-dot="carouselProps.hasDot"
         :item-len="state.itemLen"
         :current-index="state.currentIndex"
-        @dotClick="dotClick"
+        @dot-click="dotClick"
       ></Dot>
-      <Director dir="prev" @dirClick="dirClick" />
-      <Director dir="next" @dirClick="dirClick" />
+      <Director dir="prev" @dir-click="dirClick" />
+      <Director dir="next" @dir-click="dirClick" />
     </div>
   </div>
 </template>

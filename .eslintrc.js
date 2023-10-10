@@ -8,6 +8,8 @@ module.exports = {
   extends: ['@jsxiaosi/eslint-config-vue', 'plugin:prettier/recommended'],
   rules: {
     'vue/no-v-text-v-html-on-component': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-var-requires': 0,
     'prettier/prettier': [
       'error',
       {

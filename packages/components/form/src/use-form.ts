@@ -3,10 +3,10 @@ import type { ComputedRef, Ref } from 'vue';
 import { formContextKey, formItemContextKey } from './context';
 
 const useProp = <T>(name: string): ComputedRef<T | undefined> => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const vm = getCurrentInstance()!;
 
   // ？？ 空值合并 它表示如果左侧的表达式为 null 或 undefined，则返回右侧的表达式，否则返回左侧
+  // @ts-expect-error exlint-disable-next-line suppressImplicitAnyIndexErrors
   return computed(() => vm.proxy?.$props[name] ?? undefined);
 };
 

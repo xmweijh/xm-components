@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import { rollup } from 'rollup';
 import glob from 'fast-glob';
-
 import type { OutputOptions } from 'rollup';
 import { pkgRoot } from '../utils/paths';
 

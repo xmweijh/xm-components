@@ -1,6 +1,6 @@
 # 组件库模版
 
-基于[xs-components-lib](https://github.com/jsxiaosi/xs-components-lib)搭建的vue3+TS组件库。
+基于[xm-components-lib](https://github.com/jsxiaosi/xm-components-lib)搭建的vue3+TS组件库。
 
 ## 安装使用
 

@@ -207,7 +207,6 @@
 </template>
 
 <style lang="scss">
-  // 这里要绑定到已有的最外层的属性名上
   .i-pagination-inlinebox {
     --I-pagination-acitve-color-background: v-bind(colors.background);
     --I-pagination-acitve-color-hoverBackground: v-bind(colors.hoverBackground);

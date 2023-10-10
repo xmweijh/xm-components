@@ -4,7 +4,7 @@ export const projRoot = resolve(__dirname, '..', '..');
 
 // name
 export const PKG_NAME = 'xm-components';
-export const PKG_HUMP_NAME = 'XmComponents';
+export const PKG_HUMP_NAME = 'XsComponents';
 
 // packages
 export const pkgRoot = resolve(projRoot, 'packages');

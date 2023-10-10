@@ -1,20 +1,44 @@
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import DefineOptions from 'unplugin-vue-macros/rollup';
 import image from '@rollup/plugin-image';
+import json from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import postcss from 'rollup-plugin-postcss';
+import autoprefixer from 'autoprefixer'; //同样要配置browserslist
+import cssnano from 'cssnano';
 import esbuild from 'rollup-plugin-esbuild';
 import type { InputPluginOption } from 'rollup';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { pkgRoot } from './paths';
+
+/**
+ * TODO: ReferenceError: __name is not defined
+ * https://github.com/vuejs/core/issues/8303
+ * https://github.com/esbuild-kit/tsx/issues/113
+ * https://github.com/evanw/esbuild/issues/2605
+ */
+const __defProp = Object.defineProperty;
+const __name = (target: any, value: any) =>
+  __defProp(target, 'name', { value, configurable: true });
+(globalThis as any).__name = __name;
 
 export const epPackage = resolve(pkgRoot, 'package.json');
 
+/**
+ * 获取package.json文件内容
+ * @param pkgPath package.json路径
+ * @returns package.json Object
+ */
 export const getPackageManifest = (pkgPath: string) => {
   return require(pkgPath);
 };
 
+/**
+ * 查找package.json dependencies peerDependencies 配置
+ * @param pkgPath package.json路径
+ * @returns {dependencies:{...},peerDependencies:{...}}
+ */
 export const getPackageDependencies = (
   pkgPath: string,
 ): Record<'dependencies' | 'peerDependencies', string[]> => {
@@ -27,7 +51,11 @@ export const getPackageDependencies = (
   };
 };
 
-// 外部引入库标识，以防Rollup打包在一起
+/**
+ * 外部引入库标识，以防Rollup打包在一起
+ * @param buildType 'node' | 'cdn'
+ * @returns string[]
+ */
 export const generateExternal = async (buildType: 'node' | 'cdn') => {
   const { dependencies, peerDependencies } = getPackageDependencies(epPackage);
   if (buildType === 'cdn') {
@@ -36,20 +64,26 @@ export const generateExternal = async (buildType: 'node' | 'cdn') => {
   return [...dependencies, ...peerDependencies];
 };
 
-// Rollup插件配置
+/**
+ * Rollup插件配置
+ * @param minify:boolen 是否压缩生成的 JavaScript 代码
+ * @returns plugins[]
+ */
 export const rollupBuildPlugins = (minify?: boolean): InputPluginOption => {
   const plugins: InputPluginOption = [
-    // setup 支持 DefineOptions 语法
-    DefineOptions({
-      setupComponent: false,
-      setupSFC: false,
-      plugins: {
-        vue: vue({
-          isProduction: true,
-        }),
-        vueJsx: vueJsx(),
+    // vue({
+    //   isProduction: true,
+    // }),
+    vue({
+      style: {
+        postcssPlugins: [autoprefixer(), cssnano()],
       },
     }),
+    postcss({
+      extensions: ['.css', '.scss'],
+    }),
+    json(),
+    nodePolyfills(),
     // 图片处理
     image(),
     // Rollup 处理外部模块
@@ -60,14 +94,12 @@ export const rollupBuildPlugins = (minify?: boolean): InputPluginOption => {
     commonjs(),
     // Esm 编译器
     esbuild({
-      sourceMap: true,
-      target: 'es2018',
+      target: 'es2021',
       loaders: {
         '.vue': 'ts',
       },
       minify,
-      treeShaking: true,
-      legalComments: 'eof',
+      keepNames: true,
     }),
   ];
   return plugins;
